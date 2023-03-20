@@ -97,8 +97,8 @@ Send2Trash==1.5.0
 six==1.12.0
 sklearn==0.0
 stevedore==1.30.0
-tensorboard==1.12.2
-tensorflow-gpu==1.12.0
+tensorboard==2.11.0
+tensorflow-gpu==1.13.1
 termcolor==1.1.0
 terminado==0.8.1
 terminaltables==3.1.0
@@ -113,7 +113,7 @@ virtualenv==16.3.0
 virtualenv-clone==0.5.1
 virtualenvwrapper==4.8.2
 vtk==8.1.2
-vtki==0.16.1
+#vtki==0.16.1
 wcwidth==0.1.7
 webencodings==0.5.1
 Werkzeug==0.14.1
