@@ -1,0 +1,1 @@
+This is an output folder for generate training data
