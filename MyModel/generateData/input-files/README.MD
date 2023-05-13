@@ -1,1 +1,0 @@
-This is an input folder for generate training data
