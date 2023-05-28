@@ -3,81 +3,93 @@
 
 % Ubah bagian-bagian berikut dengan isi dari pendahuluan
 
-Penelitian ini dilatarbelakangi oleh \lipsum[1][1-5]
+Penelitian ini di latar belakangi oleh berbagai kondisi yang menjadi acuan. 
+Selain itu juga terdapat beberapa permasalahan yang akan dijawab sebagai luaran dari penelitian.
+
 
 \section{Latar Belakang}
 \label{sec:latarbelakang}
 
-Pesatnya perkembangan roket yang merupakan \lipsum[1]
+\emph{Cavity} pada beton merupakan rongga kosong yang terbentuk di dalam maupun di permukaan beton. 
+Menurut BPSDM PUPR, kerusakan pada beton akibat rongga udara termasuk dalam kode kerusakan 201 \parencite{jenisKerusakanJembatan}. 
+Kerusakan jenis ini biasa terjadi akibat proses pencampuran yang kurang padat, mengakibatkan beton kehilangan ketahanannya. 
+Bentuk cavities pada beton biasa tidak beraturan (irregular) karena rongga kecil yang saling bergabung menjadi satu. 
+Beberapa contoh kerusakan jenis ini seperti \emph{Honeycomb} dan \emph{Blowholes}. 
 
-\lipsum[2]
+\emph{Ground-Penetrating Radar} (GPR) merupakan salah satu metode geofisika untuk mengetahui kondisi dari bawah suatu permukaan. 
+Media permukaan yang dapat diterapkan oleh GPR seperti tanah, beton, besi, dan aspal. 
+Metode GPR menggunakan gelombang elektromagnetik ke dalam struktur lapisan bawah permukaan dan menerima gema untuk membentuk gambar 
+\emph{A-scan}, \emph{B-scan}, maupun \emph{C-scan}, yang membuat kondisi struktural dari lapisan dalam permukaan dapat disimpulkan. 
+Dalam metode ini, suatu aplikasi bernama gprMax bisa digunakan untuk mensimulasikan keberadaan objek bawah permukaan struktur.
+
+Model generatif adalah bagian dari Neural Networks yang memungkinkan sintesis data yang realistis. 
+\emph{Generative Adversarial Networks} (GANs) merupakan bentuk model generatif yang memiliki fungsi Generator dan Diskriminator. 
+Fungsi Generator merupakan fungsi untuk menghasilkan suatu data baru melalui pelatihan (\emph{train}) yang dilakukan, 
+sedangkan fungsi Diskriminator merupakan fungsi untuk menentukan apakah data baru tersebut merupakan data palsu atau asli. 
+Dengan menggunakan model generatif pada proses rekonstruksi sinyal GPR, diharapkan proses rekonstruksi dapat menjadi lebih sederhana.
 
 \section{Permasalahan}
 \label{sec:permasalahan}
 
-Dari permasalahan tersebut maka \lipsum[1][1-6]
+Berdasarkan latar belakang tersebut, maka masalah yang dapat diambil adalah proses rekonstruksi sinyal GPR untuk mendeteksi lokasi \emph{cavities} relatif rumit dan lama. 
+Banyak solusi yang telah dilakukan untuk memodelkan objek bawah permukaan, seperti \emph{Finite-Difference Time-Domain} (FDTD) \parencite{FDTD}, \emph{Method of Moments} (MoM)\parencite{MoM}, dan \emph{Finite Element Time-Domain} (FETD)\parencite{FETD}. 
+Namun, ketiga metode tersebut membutuhkan proses perhitungan yang rumit dan waktu komputasi yang lama. 
+Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton.
 
 \section{Tujuan}
 \label{sec:Tujuan}
 
-Tujuan dari \lipsum[1][1-3] adalah:
-
-\begin{enumerate}[nolistsep]
-
-  \item Membuat \lipsum[2][1-3]
-
-  \item \lipsum[3][1-3]
-
-\end{enumerate}
+Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton dengan lebih cepat.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
 
-Batasan-batasan dari \lipsum[1][1-3] adalah:
+Batasan-batasan masalah pada permasalahan yang dibahas sebelumnya di antaranya adalah:
 
 \begin{enumerate}[nolistsep]
 
-  \item Mempermudah \lipsum[2][1-3]
+  \item Simulasi model yang dibentuk dengan gprMax akan berfokus pada sintesis sinyal \emph{B-Scan} berbentuk parabolik dengan \emph{center frequency} 4.5 GHz.
 
-  \item \lipsum[3][1-5]
-
-  \item \lipsum[4][1-5]
+  \item Cavities yang dideteksi akan direpresentasikan dalam bentuk irregular dengan ukuran 1 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
 
 \end{enumerate}
 
 \section{Sistematika Penulisan}
 \label{sec:sistematikapenulisan}
 
-Laporan penelitian tugas akhir ini terbagi menjadi \lipsum[1][1-3] yaitu:
+Laporan penelitian tugas akhir ini tersusun dalam sistematika dan terstruktur sehingga mudah dipahami dan dipelajari oleh pembaca maupun seseorang yang ingin melanjutkan penelitian ini. 
+Alur sistematika penulisan laporan penelitian ini yaitu:
 
 \begin{enumerate}[nolistsep]
 
   \item \textbf{BAB I Pendahuluan}
 
-  Bab ini berisi \lipsum[2][1-5]
+        Bab ini berisi latar belakang, permasalahan, tujuan, batasan masalah dan sistematika penulisan dari penelitian.
 
-  \vspace{2ex}
+        \vspace{2ex}
 
   \item \textbf{BAB II Tinjauan Pustaka}
 
-  Bab ini berisi \lipsum[3][1-5]
+        Bab ini berisi penelitian terdahulu dan uraian teori-teori yang berhubungan dengan permasalahan yang dibahas pada penelitian ini.
+        Teori yang digunakan sebagai dasar penelitian, yaitu \emph{Ground Penetrating Radar} (GPR), \emph{A-Scan} dan \emph{B-Scan}, \emph{Ricker Wavelet}, \emph{Conditional Generative Adversarial Network} (CGAN), dan teori penunjang lainnya.
 
-  \vspace{2ex}
+        \vspace{2ex}
 
   \item \textbf{BAB III Desain dan Implementasi Sistem}
 
-  Bab ini berisi \lipsum[4][1-5]
+        Bab ini berisi tentang penjelasan-penjelasan terkait eksperimen yang akan dilakukan, pengambilan data GPR, serta pembentukan model yang digunakan untuk penelitian 
 
-  \vspace{2ex}
+        \vspace{2ex}
 
   \item \textbf{BAB IV Pengujian dan Analisa}
 
-  Bab ini berisi \lipsum[5][1-5]
+        Bab ini menjelaskan tentang hasil serta analisis yang didapatkan dari pengujian yang dilakukan mulai dari variasi kompleksitas bentuk objek, ukuran objek, dan posisi objek di bawah permukaan pada data yang sudah diuji coba.
 
-  \vspace{2ex}
+        \vspace{2ex}
 
   \item \textbf{BAB V Penutup}
 
-  Bab ini berisi \lipsum[6][1-5]
+        Bab ini merupakan penutup yang berisi kesimpulan yang diambil dari penelitian dan pengujian yang telah dilakukan. 
+        Saran dan kritik yang membangun untuk pengembangan lebih lanjut juga dituliskan pada bab ini.
 
 \end{enumerate}
