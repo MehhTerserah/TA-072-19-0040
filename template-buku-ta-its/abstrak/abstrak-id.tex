@@ -7,25 +7,33 @@
 \vspace{2ex}
 
 \begingroup
-  % Menghilangkan padding
-  \setlength{\tabcolsep}{0pt}
+% Menghilangkan padding
+\setlength{\tabcolsep}{0pt}
 
-  \noindent
-  \begin{tabularx}{\textwidth}{l >{\centering}m{2em} X}
-    % Ubah kalimat berikut dengan nama mahasiswa
-    Nama Mahasiswa    &:& Elon Reeve Musk \\
+\noindent
+\begin{tabularx}{\textwidth}{l >{\centering}m{2em} X}
+  Nama Mahasiswa    & : & \name{}         \\
 
-    % Ubah kalimat berikut dengan judul tugas akhir
-    Judul Tugas Akhir &:&	Kalkulasi Energi pada Roket Luar Angkasa Berbasis \emph{Anti-Gravitasi} \\
+  Judul Tugas Akhir & : & \tatitle{}      \\
 
-    % Ubah kalimat-kalimat berikut dengan nama-nama dosen pembimbing
-    Pembimbing        &:& 1. Nikola Tesla, S.T., M.T. \\
-                      & & 2. Wernher von Braun, S.T., M.T. \\
-  \end{tabularx}
+  Pembimbing        & : & 1. \advisor{}   \\
+                    &   & 2. \coadvisor{} \\
+\end{tabularx}
 \endgroup
 
 % Ubah paragraf berikut dengan abstrak dari tugas akhir
-Pada penelitian ini kami mengajukan \lipsum[1]
+\emph{Ground Penetrating Radar} (GPR) sudah sering digunakan dalam ilmu geofisika untuk mendeteksi objek tertimbun bawah tanah. 
+Tidak hanya pada media tanah, media lain seperti kayu, beton, dan aspal juga dapat digunakan. 
+Objek yang dideteksi juga bisa dalam berbagai bentuk dan materi, salah satunya yaitu \emph{cavities}. 
+\emph{Cavities} merupakan rongga udara yang timbul pada beton akibat udara yang terjebak pada proses pengecoran. 
+Umumnya bentuk \emph{cavities} adalah irregular. 
+Dengan menggunakan sinyal GPR, upaya mendeteksi \emph{cavities} tersebut dapat dilakukan. 
+Dalam penelitian ini dilakukan proses rekonstruksi sinyal dari \emph{B-Scan} GPR. 
+Bentuk sinyal yang akan digunakan yaitu \emph{ricker wavelet}, karena bentuknya sangat bagus dalam pembentukan data seismik. 
+Proses rekonstruksi sinyal umumnya menggunakan transformasi fourier pada saat mengintegrasikan sinyal \emph{A-Scan}, sehingga relatif rumit dan lama. 
+Dengan menerapkan \emph{Conditional Generative Adversarial Network} (CGAN), data \emph{B-Scan} GPR dapat disintesis menggunakan fungsi Generator dan Diskriminator. 
+Data tersebut dapat digunakan dalam mengidentifikasi dan mengklasifikasi objek pada sinyal GPR, yang fokusan penelitian ini berupa bentuk irregular \emph{cavities} pada beton. 
+Dengan penelitian ini, diharapkan terbentuknya suatu metode yang dapat dapat merekonstruksi sinyal \emph{B-Scan} GPR agar lebih sederhana, yang kemudian dapat mendeteksi bentuk irregular \emph{cavities} pada beton.
 
 % Ubah kata-kata berikut dengan kata kunci dari tugas akhir
-Kata Kunci: Roket, \emph{Anti-gravitasi}, Energi, Angkasa.
+Kata Kunci: Irregular, GPR, \emph{B-Scan}, CGAN.

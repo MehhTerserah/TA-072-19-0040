@@ -3,7 +3,155 @@
 
 % Ubah bagian-bagian berikut dengan isi dari tinjauan pustaka
 
-Demi mendukung penelitian ini, \lipsum[1][1-5]
+Demi mendukung penelitian ini, dibutuhkan beberapa teori penunjang sebagai bahan acuan dan referensi. 
+Dengan demikian penelitian ini menjadi lebih terarah.
+
+\section{Cavities}
+\label{sec:cavities}
+
+\emph{Cavities} merupakan suatu rongga kosong yang terbentuk pada beton akibat udara yang terperangkap di dalamnya. 
+Ketika beton selesai dicor, sebagian besar udara yang terperangkap keluar dari campuran. 
+Udara terperangkap yang tersisa dalam campuran kemudian menciptakan kekosongan udara pada beton. 
+Umumnya, beton memiliki kadar udara yang terperangkap sebesar 1-4%.
+
+\section{Ground Penetrating Radar}
+\label{sec:groundPenetratingRadar}
+
+\emph{Ground Penetrating Radar} (GPR) merupakan salah satu metode geofisika dalam mengidentifikasi kondisi bawah permukaan. 
+Penggunaan GPR pada awalnya digunakan untuk bahan geologi pada alam. 
+Seiring berkembangnya teknologi, GPR dapat diterapkan untuk media jenis lainnya, seperti kayu, beton, dan aspal \parencite{jol2008ground}.
+
+GPR terbagi menjadi 2 bagian, yaitu bagian antena pemancar (transmitter) dan bagian antena penerima (receiver). 
+Garis besar sistem GPR dapat dilihat pada gambar 2.1. 
+Antena pemancar dan penerima biasanya identik dan memenuhi karakteristik bentuk gelombang yang dihasilkan. 
+Antena pemancar membangkitkan sinyal listrik ke dalam tanah. 
+Selama perambatan, sinyal akan mengalami berbagai kerugian (loss). 
+Jika sinyal bertabrakan dengan bahan yang tidak homogen dengan media perambatan, maka sinyal akan dipantulkan. 
+Sinyal ini akan diterima dan diproses oleh antena penerima.
+
+\subsection{GprMax}
+\label{subsec:gprMax}
+
+GprMax merupakan open source software yang mensimulasikan propagasi gelombang elektromagnetik. 
+GprMax memecahkan persamaan Maxwell dalam 3D menggunakan metode Finite-Difference Time-Domain (FDTD). 
+GprMax dirancang untuk pemodelan Ground Penetrating Radar (GPR) tetapi juga dapat digunakan untuk memodelkan propagasi gelombang elektromagnetik untuk banyak aplikasi lainnya. 
+
+GprMax saat ini dirilis di bawah GNU General Public License v3 atau lebih tinggi. 
+GprMax pada prinsipnya ditulis dengan Python 3 dengan bagian-bagian kinerja-kritis yang ditulis dalam Cython. 
+Hal ini termasuk pemecah berbasis CPU yang diparalelkan menggunakan OpenMP, dan pemecah berbasis GPU yang ditulis menggunakan model pemrograman NVIDIA CUDA. \parencite{gprMax}
+
+\subsection{Pengolahan Sinyal}
+\label{subsec:pengolahanSinyal}
+
+Sinyal GPR sangat terkontaminasi oleh \emph{clutter}. 
+Pengolahan sinyal pada GPR utamanya merupakan sarana untuk mengurangi \emph{clutter} tersebut. 
+Pada dasarnya, rasio dari sinyal terhadap clutter adalah kunci dari deteksi objek. 
+Tujuan dari pengolahan sinyal pada GPR adalah untuk menyajikan gambar yang dapat dimengerti, atau mengklasifikasikan hasil target berdasarkan prosedur tertentu. 
+Untuk menghasilkan data berupa gambar, data GPR akan diproses dan ditampilkan dalam bentuk \emph{A-Scan}, \emph{B-Scan}, atau \emph{C-Scan}.
+
+\subsection{A-Scan}
+\label{subsec:aScan}
+
+\emph{A-Scan} merupakan grafik satu dimensi di mana amplitudo gelombang diplot dalam fungsi waktu. 
+Gambar 2.2 merupakan contoh dari grafik \emph{A-Scan} pada simulasi gprMax. 
+Gelombang waktu yang diterima dapat dideskripsikan sebagai konvolusi fungsi waktu yang mewakili masing-masing respon impuls dari komponen radar terhadap noise dari berbagai sumber. 
+Bentuk gelombang tunggal atau \emph{A-Scan} didefinisikan sebagai
+
+di mana rentang k = 1 sampai N, i dan j bilangan konstan \parencite{danielDvd}.
+Perlu diperhatikan bahwa waktu dan kedalaman sumbu Z dapat dianggap saling berkaitan dengan kecepatan perambatan.
+
+\subsection{B-Scan}
+\label{subsec:bScan}
+
+\emph{B-Scan} merupakan sebuah set dari gelombang radar yang berurutan sepanjang arah tertentu. 
+Gambar 2.3 merupakan contoh dari grafik \emph{B-Scan} pada simulasi gprMax. 
+Jika \emph{A-Scan} memberikan informasi terkait waktu rambatan antara pengirim dan penerima dalam dimensi spasial, maka sekumpulan gelombang \emph{A-Scan} dapat bekerja baik dalam dimensi temporal maupun spasial.
+
+Bentuk gelombang dua dimensi atau B-Scan didefinisikan sebagai
+
+di mana rentang k = 1 sampai N, i = 1 sampai L, dan j bilangan konstan, atau
+
+di mana rentang k = 1 sampai N, j = 1 sampai M, dan i bilangan konstan \parencite{danielDvd}.
+
+\subsection{Bandwidth}
+\label{subsec:bandwidth}
+
+\emph{Bandwidth} merupakan perbedaan antara batas frekuensi tertinggi dengan frekuensi terendah sinyal. 
+Pengukuran \emph{Bandwidth} berhubungan langsung dengan resolusi. 
+Durasi waktu dari pulsa transmisi berbanding terbalik dengan \emph{bandwidth}. 
+Secara matematis, nilai \emph{bandwidth} dan durasi waktu dapat didefinisikan sebagai berikut
+
+di mana r merupakan panjang resolusi dan v merupakan kecepatan perambatan \parencite{jol2008ground}.
+
+\subsection{Center Frequency}
+\label{subsec:centerFrequency}
+
+\emph{Center frequency} merupakan titik tengah dari batas frekuensi atas dan frekuensi bawah. 
+\emph{Bandwidth} tidak menentukan frekuensi dari sinyal GPR, namun dapat menentukan batas frekuensi dari \emph{center frequency}.
+Semakin rendah frekuensi, semakin besar kemungkinan mendapat sinyal GPR dari media perambatnya.
+
+Sinyal GPR dicirikan oleh rasio bandwidth terhadap \emph{center frequency}
+
+di mana rasio R diusakan sebesar mungkin \parencite{jol2008ground}. 
+Umumnya GPR mencapai rasio R mendekati 1, sehingga \emph{bandwidth} biasa ditafsirkan bernilai sama dengan nilai \emph{center frequency}.
+
+\subsection{Ricker Wavelet}
+\label{subsec:rickerWavelet}
+
+Pada GPR, metode pembangkitan data Ricker Wavelet merupakan salah satu metode terbaik dalam membangkitkan data seismik [11]. 
+Wavelet merupakan satu gelombang pendek, yang diperoleh dari suatu model matematik. 
+Wavelet Ricker memungkinkan untuk menggunakan sedikit parameter dalam mendeteksi sinyal seismik.
+
+Ricker wavelet didefinisikan dalam domain waktu sebagai
+
+di mana t merupakan waktu dan (omega)p merupakan frekuensi sudut puncak.
+
+Spektrum frekuensi dari ricker wavelet dapat didefinisikan sebagai
+
+Grafik ricker wavelet beserta spektrum frekuensi ditampilkan pada gambar 2.4. 
+Pada gambar tersebut, digunakan frekuensi sudut puncak (omega) = 60(pi) rad/s
+
+\section{Neural Networks}
+\label{sec:neuralNetworks}
+
+\emph{Neural Network} merupakan salah satu bagian dari \emph{machine learning} yang terinspirasi dari bentuk jaringan neuron pada otak manusia. 
+Setiap neuron atau node akan dikumpulkan dalam suatu lapisan (\emph{layers}), yang akan saling berhubungan dan berurutan. 
+Pada tingkat paling dasarnya, sebuah jaringan terdiri dari satu node yang mengambil input vektor dikali bobot tertentu, kemudian diubah dengan transformasi non-linear untuk mencapai output yang diharapkan. 
+Jaringan juga memiliki lapisan tersembunyi (\emph{hidden layers}), yang beratnya dapat dioptimalkan dalam mencapai output yang diharapkan.
+
+\subsection{Model Generatif}
+\label{subsec:modelGeneratif}
+
+Model generatif merupakan bagian dari \emph{Neural Network} yang memungkinkan upaya sintesis dara yang realistis. 
+Dasar dari model ini terletak pada \emph{neural network} yang berfungsi secara universal. 
+Model ini memungkinkan model, yang awalnya diberi input, mempelajari fitur dari input tersebut, kemudian mampu menghasilkan output yang mirip dengan data input.
+
+\subsection{Generative Adversarial Network}
+\label{subsec:generativeAdversarialNetwork}
+
+\emph{Generative Adversarial Network} (GAN) adalah bentuk model generatif, di mana model dibagi menjadi 2 bagian, yaitu bagian generatif (G) dan bagian diskriminator (D). 
+Bagian generatif merupakan bagian untuk mensintesis data, sedangkan bagian diskriminator merupakan bagian untuk menentukan apakah data sintesis merupakan data palsu atau asli. 
+Model ini seringkali diaplikasikan untuk mereplikasi suatu data, seperti gambar, video, dan audio.
+
+Generator dan Diskriminator akan saling menguntung-rugikan, dengan fungsi V(D,G) direpresentasikan sebagai berikut : 
+
+Dalam mempelajari distribusi generator p pada data x, variabel kebisingan input pz(z) didefinisikan sebelumnya, kemudian pemetaan direpresentasikan ke ruang data sebagai G(z; (teta)g), di mana G adalah fungsi diferensiasi yang direpresentasikan oleh multilayer perceptron dengan parameter (teta)g. 
+Multilayer perceptron (MLP) kedua D(x; (teta)d) yang menghasilkan skalar tunggal juga didefinisikan. 
+D(x) merepresentasikan kemungkinan bahwa x berasal dari data daripada pg. 
+Diskriminator dilatih untuk memaksimalkan kemungkinan menempatkan label yang benar untuk data pelatihan dan sampel dari Generator. 
+Generator dan  Diskriminator dilatih secara bersamaan untuk meminimalkan log(1-D(G(z))). \parencite{GAN}
+
+\subsection{Conditional Generative Adversarial Network}
+\label{subsec:conditionalGAN}
+
+\emph{Generative Adversarial Network} dapat diperluas ke model bersyarat jika generator dan diskriminator dikondisikan pada beberapa informasi tambahan y. 
+Konstanta y bisa berupa segala jenis informasi tambahan, seperti label kelas atau data dari modalitas lain. 
+Pengkondisian juga dapat dilakukan dengan memasukkan y ke dalam diskriminator dan generator sebagai lapisan masukan tambahan.
+
+Fungsi dari untung rugi Generator dan Diskriminator V(D,G) untuk \emph{Conditional Generative Adversarial Network} (CGAN) direpresentasikan sebagai berikut :
+
+Dalam generator, input kebisingan sebelumnya, pz(z), dan y digabungkan dalam representasi tersembunyi gabungan, dan kerangka pelatihan adversarial memungkinkan fleksibilitas yang cukup besar dalam bagaimana representasi tersembunyi ini disusun. 
+Dalam diskriminator x dan y disajikan sebagai input dan ke fungsi diskriminatif (dalam kasus ini diwujudkan kembali oleh MLP). \parencite{CGAN}
 
 \section{Roket Luar Angkasa}
 \label{sec:roketluarangkasa}
@@ -16,7 +164,7 @@ Demi mendukung penelitian ini, \lipsum[1][1-5]
   \includegraphics[scale=0.35]{gambar/roketluarangkasa.jpg}
 
   % Ubah dengan keterangan gambar yang diinginkan
-  \caption{Peluncuran roket luar angkasa \emph{Discovery} \citep{roketluarangkasa}.}
+  \caption{Peluncuran roket luar angkasa \emph{Discovery} \parencite{roketluarangkasa}.}
   \label{fig:roketluarangkasa}
 \end{figure}
 
@@ -32,7 +180,7 @@ Gravitasi merupakan \lipsum[1]
 \subsection{Hukum Newton}
 \label{subsec:hukumnewton}
 
-Newton \citep{newton1687} pernah merumuskan bahwa \lipsum[1]
+Newton \parencite{newton1687} pernah merumuskan bahwa \lipsum[1]
 Kemudian menjadi persamaan seperti pada persamaan \ref{eq:hukumpertamanewton}.
 
 % Contoh pembuatan persamaan

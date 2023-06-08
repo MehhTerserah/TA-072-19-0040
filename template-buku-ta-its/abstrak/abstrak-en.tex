@@ -7,25 +7,32 @@
 \vspace{2ex}
 
 \begingroup
-  % Menghilangkan padding
-  \setlength{\tabcolsep}{0pt}
+% Menghilangkan padding
+\setlength{\tabcolsep}{0pt}
 
-  \noindent
-  \begin{tabularx}{\textwidth}{l >{\centering}m{3em} X}
-    % Ubah kalimat berikut dengan nama mahasiswa
-    \emph{Name}     &:& Elon Reeve Musk \\
+\noindent
+\begin{tabularx}{\textwidth}{l >{\centering}m{3em} X}
+  \emph{Name}     & : & \name{}         \\
 
-    % Ubah kalimat berikut dengan judul tugas akhir dalam Bahasa Inggris
-    \emph{Title}    &:& \emph{Anti-Gravity Based Energy Calculation on Outer Space Rockets} \\
+  \emph{Title}    & : & \engtatitle{}   \\
 
-    % Ubah kalimat-kalimat berikut dengan nama-nama dosen pembimbing
-    \emph{Advisors} &:& 1. Nikola Tesla, S.T., M.T. \\
-                    & & 2. Wernher von Braun, S.T., M.T. \\
-  \end{tabularx}
+  \emph{Advisors} & : & 1. \advisor{}   \\
+                  &   & 2. \coadvisor{} \\
+\end{tabularx}
 \endgroup
 
 % Ubah paragraf berikut dengan abstrak dari tugas akhir dalam Bahasa Inggris
-\emph{In this research, we proposed \lipsum[1]}
+\emph{Ground Penetrating Radar (GPR) has often been used in geophysics to detect objects buried underground. 
+Not only in soil media, other media such as wood, concrete and road can also be used. 
+The detected object can also be in various shapes and materials, one of which is the cavities. 
+Cavities are some air-space that arise in concrete due to air trapped in the casting process. 
+By using the GPR signal, efforts to detect these cavities can be carried out. 
+In this research, the signal reconstruction process from the GPR B-Scan was carried out. 
+The signal form that will be used is the ricker wavelet, because the shape is very good at forming seismic data. 
+The signal completion process generally uses the Fourier transform when integrating A-Scan signals, so it is relatively complicated and long. 
+By applying the conditional generatif adversial network (CGAN), GPR B-Scan data can be synthesized using the Generator and Discriminator functions. 
+These data can be used in identifying and classifying objects in the GPR signal, which is the focus of this research in the form of irregular shape cavities in concrete. 
+With this research, it is expected to form a method that can reconstruct the GPR B-Scan signal to make it simpler, which can then detect irregular shape cavities in concrete.}
 
 % Ubah kata-kata berikut dengan kata kunci dari tugas akhir dalam Bahasa Inggris
-\emph{Keywords}: \emph{Rocket}, \emph{Anti-gravity}, \emph{Energy}, \emph{Space}.
+\emph{Keywords}: \emph{Irregular}, \emph{GPR}, \emph{B-Scan}, \emph{CGAN}.
