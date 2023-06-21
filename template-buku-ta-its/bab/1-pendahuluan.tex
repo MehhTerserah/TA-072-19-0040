@@ -28,18 +28,13 @@ Fungsi Generator merupakan fungsi untuk menghasilkan suatu data baru melalui pel
 sedangkan fungsi Diskriminator merupakan fungsi untuk menentukan apakah data baru tersebut merupakan data palsu atau asli. 
 Dengan menggunakan model generatif pada proses rekonstruksi sinyal GPR, diharapkan proses rekonstruksi dapat menjadi lebih sederhana.
 
-\section{Permasalahan}
-\label{sec:permasalahan}
+\section{Rumusan Masalah}
+\label{sec:rumusanmasalah}
 
 Berdasarkan latar belakang tersebut, maka masalah yang dapat diambil adalah proses rekonstruksi sinyal GPR untuk mendeteksi lokasi \emph{cavities} relatif rumit dan lama. 
 Banyak solusi yang telah dilakukan untuk memodelkan objek bawah permukaan, seperti \emph{Finite-Difference Time-Domain} (FDTD) \parencite{FDTD}, \emph{Method of Moments} (MoM)\parencite{MoM}, dan \emph{Finite Element Time-Domain} (FETD)\parencite{FETD}. 
 Namun, ketiga metode tersebut membutuhkan proses perhitungan yang rumit dan waktu komputasi yang lama. 
 Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton.
-
-\section{Tujuan}
-\label{sec:Tujuan}
-
-Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton dengan lebih cepat.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
@@ -50,46 +45,16 @@ Batasan-batasan masalah pada permasalahan yang dibahas sebelumnya di antaranya a
 
   \item Simulasi model yang dibentuk dengan gprMax akan berfokus pada sintesis sinyal \emph{B-Scan} berbentuk parabolik dengan \emph{center frequency} 4.5 GHz.
 
-  \item Cavities yang dideteksi akan direpresentasikan dalam bentuk irregular dengan ukuran 3 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
+  \item Cavities yang dideteksi akan direpresentasikan dalam sebuah objek berbentuk irregular dengan ukuran 3 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
 
 \end{enumerate}
 
-\section{Sistematika Penulisan}
-\label{sec:sistematikapenulisan}
+\section{Tujuan}
+\label{sec:Tujuan}
 
-Laporan penelitian tugas akhir ini tersusun dalam sistematika dan terstruktur sehingga mudah dipahami dan dipelajari oleh pembaca maupun seseorang yang ingin melanjutkan penelitian ini. 
-Alur sistematika penulisan laporan penelitian ini yaitu:
+Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton dengan lebih cepat.
 
-\begin{enumerate}[nolistsep]
+\section{Manfaat}
+\label{sec:manfaat}
 
-  \item \textbf{BAB I Pendahuluan}
-
-        Bab ini berisi latar belakang, permasalahan, tujuan, batasan masalah dan sistematika penulisan dari penelitian.
-
-        \vspace{2ex}
-
-  \item \textbf{BAB II Tinjauan Pustaka}
-
-        Bab ini berisi penelitian terdahulu dan uraian teori-teori yang berhubungan dengan permasalahan yang dibahas pada penelitian ini.
-        Teori yang digunakan sebagai dasar penelitian, yaitu \emph{Ground Penetrating Radar} (GPR), \emph{A-Scan} dan \emph{B-Scan}, \emph{Ricker Wavelet}, \emph{Conditional Generative Adversarial Network} (CGAN), dan teori penunjang lainnya.
-
-        \vspace{2ex}
-
-  \item \textbf{BAB III Desain dan Implementasi Sistem}
-
-        Bab ini berisi tentang penjelasan-penjelasan terkait eksperimen yang akan dilakukan, pengambilan data GPR, serta pembentukan model yang digunakan untuk penelitian 
-
-        \vspace{2ex}
-
-  \item \textbf{BAB IV Pengujian dan Analisa}
-
-        Bab ini menjelaskan tentang hasil serta analisis yang didapatkan dari pengujian yang dilakukan mulai dari variasi kompleksitas bentuk objek, ukuran objek, dan posisi objek di bawah permukaan pada data yang sudah diuji coba.
-
-        \vspace{2ex}
-
-  \item \textbf{BAB V Penutup}
-
-        Bab ini merupakan penutup yang berisi kesimpulan yang diambil dari penelitian dan pengujian yang telah dilakukan. 
-        Saran dan kritik yang membangun untuk pengembangan lebih lanjut juga dituliskan pada bab ini.
-
-\end{enumerate}
+Manfaat dari penelitian ini adalah mampu membentuk suatu metode untuk merekonstruksi sinyal GPR dalam mendeteksi bentuk irregular cavities yang beresolusi tinggi pada beton dengan menggunakan GAN. Selain itu, penelitian ini juga dapat menjadi referensi untuk penelitian selanjutnya terkait rekonstruksi sinyal GPR.
