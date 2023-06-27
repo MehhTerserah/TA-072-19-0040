@@ -10,31 +10,41 @@ Selain itu juga terdapat beberapa permasalahan yang akan dijawab sebagai luaran 
 \section{Latar Belakang}
 \label{sec:latarbelakang}
 
+\emph{Ground penetrating radar} (GPR) adalah metode geofisika noninvasif untuk mencitrakan diskontinuitas listrik di bawah permukaan yang dangkal. 
+GPR bekerja dengan mengirimkan pulsa elektromagnetik (EM) ke bawah permukaan dan gelombang pantulan direkam oleh antena di permukaan. 
+Para peneliti sering menggunakan GPR untuk mempelajari strata bawah permukaan yang dangkal dan untuk mengidentifikasi anomali struktur bawah tanah dalam banyak aplikasi dekat permukaan bumi \parencite{NEAL2004261}. 
+\emph{Cavity} merupakan salah satu objek yang dapat diidentifikasi menggunakan GPR.
+
 \emph{Cavity} pada beton merupakan rongga kosong yang terbentuk di dalam maupun di permukaan beton. 
+Bentuk \emph{cavities} pada beton biasa tidak beraturan (irregular) karena rongga kecil yang saling bergabung menjadi satu. 
 Menurut BPSDM PUPR, kerusakan pada beton akibat rongga udara termasuk dalam kode kerusakan 201 \parencite{jenisKerusakanJembatan}. 
 Kerusakan jenis ini biasa terjadi akibat proses pencampuran yang kurang padat, mengakibatkan beton kehilangan ketahanannya. 
-Bentuk cavities pada beton biasa tidak beraturan (irregular) karena rongga kecil yang saling bergabung menjadi satu. 
-Beberapa contoh kerusakan jenis ini seperti \emph{Honeycomb} dan \emph{Blowholes}. 
+Oleh karena itu, GPR dapat digunakan untuk mengidentifikasi ukuran dan posisi \emph{cavity} pada bawah permukaan beton.
 
-\emph{Ground-Penetrating Radar} (GPR) merupakan salah satu metode geofisika untuk mengetahui kondisi dari bawah suatu permukaan. 
-Media permukaan yang dapat diterapkan oleh GPR seperti tanah, beton, besi, dan aspal. 
-Metode GPR menggunakan gelombang elektromagnetik ke dalam struktur lapisan bawah permukaan dan menerima gema untuk membentuk gambar 
-\emph{A-scan}, \emph{B-scan}, maupun \emph{C-scan}, yang membuat kondisi struktural dari lapisan dalam permukaan dapat disimpulkan. 
-Dalam metode ini, suatu aplikasi bernama gprMax bisa digunakan untuk mensimulasikan keberadaan objek bawah permukaan struktur.
+Untuk memperoleh data bentuk struktur geometri bawah permukaan, data mentahan GPR perlu diproses terlebih dahulu. 
+Terdapat banyak solusi yang telah dilakukan untuk memproses data GPR, baik metode Numerik seperti \emph{Finite-Difference Time-Domain} (FDTD) \parencite{FDTD}, \emph{Method of Moments} (MoM)\parencite{MoM}, dan \emph{Finite Element Time-Domain} (FETD)\parencite{FETD}, 
+maupun metode inversi GPR seperti pendekatan \emph{ray-based tomography} \parencite{tomograms}, \emph{reverse-time migration} (RTM), \parencite{RTM}, dan \emph{full-waveform inversion} (FWI) \parencite{FWI}.
+Namun dari metode tersebut sangat kompleks dalam interpretasinya. 
+Interpretasi data GPR, baik metode numerik maupun inversi GPR, relatif rumit karena adanya variasi dalam respons gelombang elektromagnetik yang dihasilkan oleh berbagai struktur dan bahan bawah permukaan. 
+Dibutuhkan pengetahuan geologi atau pengalaman yang mendalam dalam interpretasi data untuk menghindari kesalahan atau penafsiran yang salah.
 
-Model generatif adalah bagian dari Neural Networks yang memungkinkan sintesis data yang realistis. 
-\emph{Generative Adversarial Networks} (GANs) merupakan bentuk model generatif yang memiliki fungsi Generator dan Diskriminator. 
-Fungsi Generator merupakan fungsi untuk menghasilkan suatu data baru melalui pelatihan (\emph{train}) yang dilakukan, 
-sedangkan fungsi Diskriminator merupakan fungsi untuk menentukan apakah data baru tersebut merupakan data palsu atau asli. 
-Dengan menggunakan model generatif pada proses rekonstruksi sinyal GPR, diharapkan proses rekonstruksi dapat menjadi lebih sederhana.
+Dalam beberapa tahun terakhir, terdapat metode popular berbasis data seperti \emph{neural networks} dalam aplikasi di banyak bidang ilmiah, dengan keberhasilan yang terkemuka terutama dalam bidang visi komputer dan pemrosesan bahasa natural. 
+\emph{Deep neural networks} (DNNs) telah menunjukkan kemampuan luar biasa dalam aplikasi yang berkaitan dengan klasifikasi gambar \parencite{objectDetection}, deteksi objek \parencite{fasterRCNN}, dan segmentasi semantik (prediksi tingkat piksel) \parencite{difNet} dan sintesis gambar \parencite{GAN}. 
+DNN secara otomatis mempelajari fitur tingkat tinggi melalui data pelatihan dan kemudian dapat memperkirakan pemetaan nonlinear antara data gambar masukan dan berbagai domain data, seperti label, teks, atau gambar lainnya. 
+Oleh karena itu, beberapa metode inversi berbasis \emph{deep learning end-to-end} telah diperkenalkan untuk membalikkan kecepatan atau impedansi dari data seismik \parencite{gprInvNet}.
+
+Model generatif adalah bagian dari \emph{neural networks} yang memungkinkan sintesis data yang realistis. 
+\emph{Generative Adversarial Networks} (GANs) merupakan bentuk model generatif yang memiliki fungsi Generator untuk menghasilkan suatu data baru melalui pelatihan (\emph{train}) yang dilakukan dan Diskriminator untuk menentukan apakah data baru tersebut merupakan data palsu atau asli. 
+Pix2pix merupakan salah satu model GAN yang memiliki kemampuan menerjemahkan \emph{image-to-image}. 
+Model ini telah berhasil diterapkan dalam berbagai aplikasi seperti pengolahan citra medis, pemetaan jalan, desain interior, dan seni digital. 
+Oleh karena itu, judul ini diajukan dengan harapan model GAN ini dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR.
 
 \section{Rumusan Masalah}
 \label{sec:rumusanmasalah}
 
 Berdasarkan latar belakang tersebut, maka masalah yang dapat diambil adalah proses rekonstruksi sinyal GPR untuk mendeteksi lokasi \emph{cavities} relatif rumit dan lama. 
-Banyak solusi yang telah dilakukan untuk memodelkan objek bawah permukaan, seperti \emph{Finite-Difference Time-Domain} (FDTD) \parencite{FDTD}, \emph{Method of Moments} (MoM)\parencite{MoM}, dan \emph{Finite Element Time-Domain} (FETD)\parencite{FETD}. 
-Namun, ketiga metode tersebut membutuhkan proses perhitungan yang rumit dan waktu komputasi yang lama. 
-Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton.
+Terdapat banyak solusi yang telah dilakukan untuk memodelkan objek bawah permukaan, namun metode tersebut membutuhkan proses perhitungan yang rumit dan waktu komputasi yang lama. 
+Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
@@ -43,18 +53,23 @@ Batasan-batasan masalah pada permasalahan yang dibahas sebelumnya di antaranya a
 
 \begin{enumerate}[nolistsep]
 
-  \item Simulasi model yang dibentuk dengan gprMax akan berfokus pada sintesis sinyal \emph{B-Scan} berbentuk parabolik dengan \emph{center frequency} 4.5 GHz.
+  \item Simulasi model yang dibentuk dengan gprMax akan berfokus pada sintesis sinyal \emph{B-Scan} berbentuk parabolik dengan \emph{center frequency} 4.5 GHz dan bentuk gelombang ricker.
 
-  \item Cavities yang dideteksi akan direpresentasikan dalam sebuah objek berbentuk irregular dengan ukuran 3 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
+  \item \emph{Cavities} yang dideteksi akan direpresentasikan dalam objek berbentuk irregular dengan ukuran 3 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
+  
+  \item Jumlah \emph{cavities} yang dideteksi berjumlah 1 buah objek irregular yang terdiri dari beberapa objek \emph{cavities} yang saling menempel.
+
+  \item Dimensi dari simulasi yang dilakukan untuk setiap data GPR sebesar 30 cm x 30 cm.
 
 \end{enumerate}
 
 \section{Tujuan}
 \label{sec:Tujuan}
 
-Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi langsung sinyal \emph{B-Scan} GPR dalam mendeteksi bentuk irregular \emph{cavities} pada beton dengan lebih cepat.
+Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR dengan lebih cepat.
 
 \section{Manfaat}
 \label{sec:manfaat}
 
-Manfaat dari penelitian ini adalah mampu membentuk suatu metode untuk merekonstruksi sinyal GPR dalam mendeteksi bentuk irregular cavities yang beresolusi tinggi pada beton dengan menggunakan GAN. Selain itu, penelitian ini juga dapat menjadi referensi untuk penelitian selanjutnya terkait rekonstruksi sinyal GPR.
+Manfaat dari penelitian ini adalah mampu membentuk suatu metode untuk merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR yang beresolusi tinggi pada beton dengan menggunakan GAN. 
+Selain itu, penelitian ini juga dapat menjadi referensi untuk penelitian selanjutnya terkait rekonstruksi sinyal GPR.
