@@ -38,6 +38,14 @@ Ketika beton selesai dicor, sebagian besar udara yang terperangkap keluar dari c
 Udara terperangkap yang tersisa dalam campuran kemudian menciptakan kekosongan udara pada beton. 
 Cavities pada beton dapat ditimbulkan oleh berbagai sebab, diantaranya: Pemadatan yang dilakukan dengan vibrator kurang baik, 
 karena jarak antar bekisting dengan tulangan atau jarak antar tulangan terlalu sempit sehingga bagian mortar tidak dapat mengisi rongga antara agregat kasar dengan baik. \parencite{analisakerusakanbeton}
+Contoh bentuk cavities pada beton dapat dilihat pada gambar \ref{fig:voidOnConcrete}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5]{gambar/voidOnConcrete.png}
+  \caption{Bentuk Cavities pada Beton Kering \parencite{voidOnConcrete}.}
+  \label{fig:voidOnConcrete}
+\end{figure}
 
 \section{Ground Penetrating Radar}
 \label{sec:groundPenetratingRadar}
@@ -76,7 +84,7 @@ GprMax dirancang untuk pemodelan Ground Penetrating Radar (GPR) tetapi juga dapa
 \end{figure}
 
 GprMax saat ini dirilis di bawah GNU General Public License v3 atau lebih tinggi. 
-GprMax pada prinsipnya ditulis dengan Python 3 dengan bagian-bagian kinerja-kritis yang ditulis dalam Cython. 
+Bahasa pemrograman yang digunakan pada gprMax aslinya berbasis C, dan sekarang sudah sepenuhnya ditulis ulang menggunakan kombinasi bahasa Python dan Cython. 
 Hal ini termasuk pemecah berbasis CPU yang diparalelkan menggunakan OpenMP, dan pemecah berbasis GPU yang ditulis menggunakan model pemrograman NVIDIA CUDA. \parencite{gprMax}
 
 \subsection{Pengolahan Sinyal}
@@ -110,7 +118,7 @@ Bentuk gelombang tunggal atau \emph{A-Scan} didefinisikan sebagai
 \end{equation}
 
 di mana rentang k = 1 sampai N, i dan j bilangan konstan \parencite{danielDvd}.
-Perlu diperhatikan bahwa waktu dan kedalaman sumbu Z dapat dianggap saling berkaitan dengan kecepatan perambatan.
+Perlu diperhatikan bahwa waktu dan kedalaman sumbu Z dapat dianggap saling berkaitan dengan kecepatan perambatan.\\
 
 \subsection{B-Scan}
 \label{subsec:bScan}
@@ -199,7 +207,7 @@ Spektrum frekuensi dari ricker wavelet dapat didefinisikan sebagai
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.7]{gambar/ricker.jpg}
+  \includegraphics[scale=1]{gambar/ricker.jpg}
   \caption{Grafik gelombang ricker beserta spektrum frekuensi \parencite{rickerWavelet}.}
   \label{fig:gelombangRicker}
 \end{figure}
@@ -215,8 +223,24 @@ Setiap neuron atau node akan dikumpulkan dalam suatu lapisan (\emph{layers}), ya
 Pada tingkat paling dasarnya, sebuah jaringan terdiri dari satu node yang mengambil input vektor dikali bobot tertentu, kemudian diubah dengan transformasi non-linear untuk mencapai output yang diharapkan. 
 Jaringan juga memiliki lapisan tersembunyi (\emph{hidden layers}), yang beratnya dapat dioptimalkan dalam mencapai output yang diharapkan.
 
-\subsection{Model Generatif}
-\label{subsec:modelGeneratif}
+\subsection{Deep Learning}
+\label{subsesc:deeplearning}
+\emph{Deep learning} merupakan algoritma yang menggunakan \emph{artificial neural networks} (ANN). 
+ANN kemungkinan dianggap sebagai cara yang paling baik dalam menentukan serangkaian fungsi yang fleksibel. 
+Hal ini dikarenakan ANN dibangun dari banyak blok komputasi dasar yang disebut neuron. 
+Secara khusus, daripada memprogram serangkaian instruksi khusus untuk menyelesaikan masalah secara langsung, model \emph{deep learning} dilatih berdasarkan data dari dunia nyata dan mempelajari bagaimana cara menyelesaikan masalah \parencite{PDLT-2022}. 
+
+\subsection{Convolutional Neural Network}
+\label{subsec:convolutionalNeuralNetwork}
+
+Dalam \emph{deep learning}, \emph{Convolutional Neural Network} (CNN) adalah kelas jaringan saraf tiruan yang paling umum diterapkan untuk menganalisis citra visual. 
+Convolutional Neural Network (CNN) telah menunjukkan kinerja yang sangat baik dalam banyak masalah visi komputer dan \emph{machine learning}. 
+Banyak paper yang telah diterbitkan tentang topik ini, dan beberapa \emph{open source software} CNN telah tersedia. 
+CNN berguna dalam banyak aplikasi, terutama dalam tugas-tugas terkait gambar. 
+Aplikasi CNN termasuk klasifikasi gambar, segmentasi semantik gambar, deteksi objek dalam gambar, dsb \parencite{introductionCNN}. 
+
+\section{Model Generatif}
+\label{sec:modelGeneratif}
 
 Model generatif merupakan bagian dari \emph{Neural Network} yang memungkinkan upaya sintesis dara yang realistis. 
 Dasar dari model ini terletak pada \emph{neural network} yang berfungsi secara universal. 
@@ -258,3 +282,92 @@ Fungsi dari untung rugi Generator dan Diskriminator V(D,G) untuk \emph{Condition
 
 Dalam generator, input kebisingan sebelumnya, pz(z), dan y digabungkan dalam representasi tersembunyi gabungan, dan kerangka pelatihan adversarial memungkinkan fleksibilitas yang cukup besar dalam bagaimana representasi tersembunyi ini disusun. 
 Dalam diskriminator x dan y disajikan sebagai input dan ke fungsi diskriminatif (dalam kasus ini diwujudkan kembali oleh MLP). \parencite{CGAN}
+
+\section{Loss Function}
+\label{sec:lossFunction}
+
+\emph{Loss Function} merupakan fungsi yang membandingkan target dengan nilai output yang diprediksi. 
+Fungsi ini mengukur seberapa baik suatu \emph{Neural Network} memodelkan data pelatihan. 
+Saat pelatihan, model akan meminimalkan nilai \emph{Loss Function} antara output yang diprediksi dan target.
+
+\subsection{Sigmoid Cross-Entropy Loss}
+\label{sigmoidCrossEntropyLoss}
+
+\emph{Sigmoid function} merupakan fungsi kontinu berbentuk “S” dengan range dari 0 sampai 1 untuk domain bilangan riil. 
+Fungsi sigmoid adalah fungsi yang paling umum dikenal digunakan dalam \emph{Feedforward Neural Network} (FNN) karena sifat nonlinier dan kesederhanaan komputasi turunannya. 
+Bentuk sederhana dari fungsi sigmoid secara matematis didefinisikan sebagai 
+
+\begin{equation}
+  \label{eq:sigmoid}
+  f(h) =  \frac{1}{1+exp(-2 \beta h)} 
+\end{equation}
+
+dimana $\beta$ merupakan konstanta atau parameter yang dapat dilatih dan fungsi memenuhi kondisi f(h) + f(-h) = 1 \parencite{sigmoid}. Bentuk grafik fungsi sigmoid dapat dilihat pada gambar \ref{fig:sigmoid}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.35]{gambar/sigmoid.png}
+  \caption{Grafik Fungsi Sigmoid.}
+  \label{fig:sigmoid}
+\end{figure}
+
+\emph{Sigmoid cross-entropy loss}, juga dikenal sebagai \emph{binary cross-entropy loss} \parencite{lossFunction}, merupakan fungsi yang digunakan untuk mengukur perbedaan antara prediksi yang dihasilkan oleh model dan label yang sebenarnya pada kasus klasifikasi biner, di mana setiap sampel data hanya dapat memiliki dua kelas yang mungkin. 
+Fungsi \emph{sigmoid cross-entropy loss} menggunakan fungsi sigmoid untuk memetakan nilai prediksi yang kontinu ke dalam rentang antara 0 dan 1. 
+Selanjutnya, fungsi ini membandingkan nilai prediksi yang dihasilkan dengan label yang sebenarnya menggunakan matriks \emph{loss cross-entropy}. 
+Secara matematis, fungsi \emph{sigmoid cross-entropy loss} didefinisikan sebagai 
+
+\begin{equation}
+  \label{eq:sigmoidCrossEntropyLoss}
+  L_{log} = H(f,y) = - \frac{1}{N}  \sum_ {i=1} ^N  \big( y_{i} . log \big(f( y_{i} ) \big) +(1 - y_{i}) . log \big(1 - f( y_{i} ) \big) \big)  
+\end{equation}
+
+dimana $y_{i}$ merupakan label untuk titik tertentu (0 untuk warna hijau dan 1 untuk warna merah) dan f(y) merupakan fungsi sigmoid untuk memprediksi probabilitas suatu titik bernilai 0 (hijau) untuk semua titik N.
+
+\subsection{Mean Squared Error}
+\label{subsec:MSE}
+
+\emph{Mean Squared Error} (MSE) adalah rata-rata error kuadrat antara nilai aktual dan prediksi. 
+Dalam model yang memprediksi variabel kontinu, MSE adalah tolok ukur kinerja yang ideal karena keterkaitannya dengan konsep \emph{cross-entropy} dari teori informasi. 
+\emph{Cross-entropy} akan mengukur kesamaan dua distribusi probabilitas. 
+Jika tujuan pemodelan adalah untuk mengidentifikasi model yang paling dekat mereproduksi distribusi penghasil data yang sebenarnya, maka model terbaik akan meminimalkan \emph{cross-entropy} antara prediksi model dan data pelatihan \parencite{MSE}. 
+
+\subsection{Structural Similarity Index Measurement}
+\label{subsec:SSIM}
+
+\emph{Structural Similarity Index Measurement} (SSIM) adalah metode yang digunakan untuk mengukur kesamaan struktural antara dua gambar atau sinyal. 
+Metrik ini dikembangkan untuk mencerminkan persepsi visual manusia dalam mengevaluasi kesamaan antara dua gambar. 
+SSIM memperhitungkan 3 parameter yang ada pada citra, yaitu kecerahan (\emph{luminance}), kontras (\emph{contrast}), dan struktur (\emph{structure}). 
+Diagram sistem SSIM dapat dilihat pada gambar berikut.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5]{gambar/SSIM.png}
+  \caption{Diagram Sistem SSIM \parencite{SSIM}.}
+  \label{fig:SSIM}
+\end{figure}
+
+Secara matematis, nilai SSIM dari 2 gambar (x, y) didefinisikan sebagai 
+
+\begin{equation}
+  \label{eq:ssim1}
+  SSIM(x,y) =  [l(x,y)^{ \alpha } ] . [c(x,y)^{ \beta }].[s(x,y)^{ \gamma }]
+\end{equation}
+
+dimana $\alpha$, $\beta$ dan $\gamma$ bilangan positif yang merupakan parameter yang digunakan untuk menyesuaikan tingkat kepentingan relatif dari ketiga komponen tersebut. 
+Dengan mengasumsikan ketiga komponen memiliki tingkat kepentingan yang sama ($\alpha$=$\beta$=$\gamma$=1), maka nilai SSIM secara spesifik didefinisikan sebagai 
+
+\begin{equation}
+  \label{eq:ssim2}
+  SSIM(x,y) =  \frac{(2  \mu_{x} \mu_{y} + C_{1})(2 \sigma_{xy} + C_{2} )}{(\mu_{x}^{2}  + \mu_{y}^{2}+C_{1})(\sigma_{x}^{2}+\sigma_{y}^{2}+C_{2})} 
+\end{equation}
+
+dimana $\mu$ merupakan nilai rata-rata dari intensitas piksel, $\sigma$ merupakan estimasi dari kontras gambar, dan C1 C2 merupakan konstanta untuk menghindari ketidakstabilan \parencite{SSIM}.
+
+\section{Adam Optimizer}
+\label{adamOptimizer}
+
+Adam merupakan sebuah metode untuk optimasi stokastik yang efisien, yang hanya membutuhkan gradien orde pertama dengan sedikit kebutuhan memori. 
+Nama Adam diambil dari singkatan \emph{adaptive moment estimation}. 
+Metode ini mudah diimplementasikan, efisien secara komputasi, memiliki sedikit kebutuhan memori, tidak berubah terhadap penskalaan diagonal gradien, dan cocok untuk masalah yang besar dalam hal data dan/atau parameter. 
+Metode ini merupakan gabungan dari dua metode, yaitu AdaGrad \parencite{adaGrad}, yang bekerja dengan baik dengan gradien sparse, 
+dan RMSProp \parencite{RMSProp}, yang bekerja dengan baik di pengaturan \emph{on-line} dan \emph{non-stationary}\parencite{adam}.
