@@ -1,0 +1,1 @@
+Data 181-190 selanjutnya diubah menjadi data 151-160 pada dataset yang digunakan, dan data 151-180 digeser ke belakang sebesar 10 nilai
