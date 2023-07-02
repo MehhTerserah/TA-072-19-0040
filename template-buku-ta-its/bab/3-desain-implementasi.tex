@@ -169,26 +169,19 @@ Hasil dari Total Discriminator Loss akan diterima oleh Discriminator Optimizer, 
 
 Setelah model mengalami proses training, model akan dites dengan menggunakan test data. 
 Test data berupa 40 data dari dataset yang belum dilatih pada model. 
-Checkpoint yang disimpan terakhir akan dimuat, dan akan dicoba untuk mensintesis gambar menggunakan test data tersebut. 
+\emph{Checkpoint} yang disimpan terakhir akan dimuat, dan akan dicoba untuk mensintesis gambar menggunakan test data tersebut. 
 
-Model GAN kurang memiliki fungsi objektif, yang membuatnya sulit untuk membandingkan antara satu model dengan yang lain. 
-Beberapa metode pengukuran sudah diperkenalkan, namun belum ada konsensus mengenai pengukuran mana yang paling baik dalam mengevaluasi kemampuan dan batasan model. 
-Pemeriksaan visual merupakan salah satu cara umum dan intuitif dalam mengevaluasi model GAN \parencite{proConsGANEvaluation}. 
-Fungsi generator akan dibuat untuk mensintesis sekumpulan gambar, kemudian dievaluasi kualitas dan keragaman gambar yang disintesis dengan gambar yang ditargetkan. 
-Oleh karena itu, dalam proses evaluasi model, fungsi generator akan dievaluasi secara visual.
+Proses evaluasi dilakukan dengan evaluasi matriks kemudian dilanjut dengan evaluasi visual. 
+Evaluasi matriks adalah metode objektif yang menggunakan berbagai metrik dan parameter numerik untuk mengukur sejauh mana dua gambar cocok atau berbeda. 
+Metode evaluasi matriks yang digunakan pada penelitian ini adalah metode \emph{Root Mean Square} (RMS), \emph{Mean Square Error} (MSE) dan \emph{Structural Similarity Index} (SSIM). 
+RMS dan MSE umumnya digunakan untuk mengukur kesalahan atau perbedaan antara dua gambar atau sinyal, dengan nilai yang lebih rendah menunjukkan kesamaan yang lebih besar. 
+Sedangkan SSIM memberikan ukuran yang lebih holistik tentang kesamaan struktural antara dua gambar.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.7]{gambar/alur evaluasi model.png}
-  \caption{Proses Evaluasi Fungsi Generatif dari Model GAN}
-  \label{fig:evaluating}
-\end{figure}
-
-Evaluasi secara visual menggunakan gambar ground truth dengan gambar prediksi dan mencocokkan kesamaan dari kedua gambar. 
-Gambar 3.4 menunjukkan alur dari proses evaluasi model. 
-Untuk membantu proses pencocokan, digunakan metode Root Mean Square (RMS) dari histogram perbedaan kedua gambar. 
-Semakin mendekati nol nilai RMS dari kedua gambar, maka semakin identik. 
-Proses evaluasi ini dilakukan untuk 40 data yang belum dilatih pada model.
+Setelah melakukan evaluasi matriks, dilakukan evaluasi visual. 
+Evaluasi visual dilakukan dengan melibatkan penilaian subjektif oleh manusia terhadap kualitas dan kemiripan dua gambar. 
+Dalam membantu proses evaluasi visual, digunakan fungsi \emph{image differencing}. 
+Fungsi \emph{image differencing} melibatkan pengurangan piksel-piksel dari gambar asli dengan gambar sintesis. 
+Hasil pengurangan dapat mengungkapkan informasi penting tentang perubahan struktur, pergeseran objek, atau perubahan lainnya dalam gambar.
 
 \section{Bahan dan Peralatan yang Digunakan}
 \label{sec:bahanPeralatan}
@@ -224,40 +217,3 @@ Pada gprMax, Jupyter Notebook merupakan salah satu tools yang dapat digunakan da
 
 Pada penelitian ini, alat utama yang akan digunakan adalah Laptop Asus TUF Gaming A15 FA506QM dengan Processor AMD Ryzen 7 @ 3.20Ghz, 
 Ram 32 GB, 1 TB SSD, NVIDIA Geforce RTX 3060 dan AMD Radeon ™ Graphics Card, serta Sistem Operasi Windows.
-
-\section{Urutan pelaksanaan penelitian}
-\label{urutanPenelitian}
-
-Urutan pelaksanaan penelitian dilaksanakan selama 16 minggu, dimana setiap kegiatannya ditampilkan pada tabel berikut :
-
-\newcommand{\w}{\cellcolor{white}}
-\newcommand{\G}{\cellcolor{gray}}
-\begin{table}[H]
-  \captionof{table}{Tabel timeline}
-  \label{tbl:timeline}
-  \begin{tabular}{|p{3.5cm}|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-
-    \hline
-    \multirow{2}{*}{Kegiatan} & \multicolumn{16}{|c|}{Minggu}                                                                       \\
-    \cline{2-17}              &
-    1                         & 2                             & 3  & 4  & 5  & 6  & 7  & 8  & 9  & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
-    \hline
-
-    % Gunakan \G untuk mengisi sel dan \w untuk mengosongkan sel
-    Dataset GPR          &
-    \G                        & \G                            & \G & \G & \w & \w & \w & \w & \w & \w & \w & \w & \w & \w & \w & \w \\
-    \hline
-
-    Arsitektur GAN           &
-    \w                        & \w                            & \w & \w & \G & \G & \G & \G & \w & \w & \w & \w & \w & \w & \w & \w \\
-    \hline
-
-    Training Model              &
-    \w                        & \w                            & \w & \w & \w & \w & \w & \w & \G & \G & \G & \G & \w & \w & \w & \w \\
-    \hline
-
-    Evaluasi Model       &
-    \w                        & \w                            & \w & \w & \w & \w & \w & \w & \w & \w & \w & \w & \G & \G & \G & \G \\
-    \hline
-  \end{tabular}
-\end{table}

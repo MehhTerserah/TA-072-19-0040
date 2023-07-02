@@ -323,6 +323,20 @@ Secara matematis, fungsi \emph{sigmoid cross-entropy loss} didefinisikan sebagai
 
 dimana $y_{i}$ merupakan label untuk titik tertentu (0 untuk warna hijau dan 1 untuk warna merah) dan f(y) merupakan fungsi sigmoid untuk memprediksi probabilitas suatu titik bernilai 0 (hijau) untuk semua titik N.
 
+\subsection{Image Differencing}
+\label{imagediff}
+
+\emph{Image differencing} merupakan metode pengurangan nilai digital dari suatu gambar dengan gambar lain. 
+Metode ini akan mengurangi nilai setiap piksel gambar yang berada di posisi yang sama, kemudian hasil pengurangan akan ditampilkan dalam bentuk gambar. 
+Secara matematis, metode image differencing didefinisikan sebagai
+
+\begin{equation}
+  \label{eq:imagediff}
+  l_{d}(x,y) =  l_{1}(x,y) - l_{2}(x,y) 
+\end{equation}
+
+dimana $l_{1}$ dan $l_{2}$ merupakan kedua gambar input dan (x,y) merupakan posisi pixel \parencite{imgdiff}.
+
 \subsection{Mean Squared Error}
 \label{subsec:MSE}
 
