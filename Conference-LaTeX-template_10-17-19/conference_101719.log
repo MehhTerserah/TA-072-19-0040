@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.14)  4 JUL 2023 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.14)  4 JUL 2023 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -396,198 +396,199 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\PASU SIAHAAN\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
  (C:\Users\PASU SIAHAAN\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
  (C:\Users\PASU SIAHAAN\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 65.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 63.
 
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 98--104
+Underfull \hbox (badness 2050) in paragraph at lines 96--102
 \OT1/ptm/m/n/10 per-mukaan, data men-ta-han GPR perlu diproses ter-lebih
  []
 
 [1{C:/Users/PASU SIAHAAN/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
-] [2]
-<gambar/metodologi.png, id=12, 603.25375pt x 81.30376pt>
+]
+<gambar/metodologi.png, id=9, 603.25375pt x 81.30376pt>
 File: gambar/metodologi.png Graphic file (type png)
 <use gambar/metodologi.png>
-Package pdftex.def Info: gambar/metodologi.png  used on input line 156.
+Package pdftex.def Info: gambar/metodologi.png  used on input line 154.
 (pdftex.def)             Requested size: 211.14197pt x 28.45673pt.
-<gambar/alur pengumpulan data.png, id=14, 683.55376pt x 241.90375pt>
+ [2 <./gambar/metodologi.png>]
+<gambar/alur pengumpulan data.png, id=15, 683.55376pt x 241.90375pt>
 File: gambar/alur pengumpulan data.png Graphic file (type png)
 <use gambar/alur pengumpulan data.png>
-Package pdftex.def Info: gambar/alur pengumpulan data.png  used on input line 168.
+Package pdftex.def Info: gambar/alur pengumpulan data.png  used on input line 166.
 (pdftex.def)             Requested size: 239.24739pt x 84.66757pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
 []\OT1/ptm/m/n/10 Simulasi meng-gu-nakan gprMax un-tuk meng-hasilkan
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
 
  []
 
-<gambar/inputGprMax.png, id=15, 325.215pt x 228.10219pt>
+<gambar/inputGprMax.png, id=16, 325.215pt x 228.10219pt>
 File: gambar/inputGprMax.png Graphic file (type png)
 <use gambar/inputGprMax.png>
-Package pdftex.def Info: gambar/inputGprMax.png  used on input line 203.
+Package pdftex.def Info: gambar/inputGprMax.png  used on input line 201.
 (pdftex.def)             Requested size: 195.1305pt x 136.86235pt.
-<gambar/data1.jpg, id=16, 513.92pt x 256.96pt>
+<gambar/data1.jpg, id=17, 513.92pt x 256.96pt>
 File: gambar/data1.jpg Graphic file (type jpg)
 <use gambar/data1.jpg>
-Package pdftex.def Info: gambar/data1.jpg  used on input line 220.
+Package pdftex.def Info: gambar/data1.jpg  used on input line 218.
 (pdftex.def)             Requested size: 256.95937pt x 128.47968pt.
 
-Overfull \hbox (4.95937pt too wide) in paragraph at lines 220--221
+Overfull \hbox (4.95937pt too wide) in paragraph at lines 218--219
  [][] 
  []
 
-<gambar/Arsitektur GAN.png, id=17, 482.80376pt x 482.80376pt>
+<gambar/Arsitektur GAN.png, id=18, 482.80376pt x 482.80376pt>
 File: gambar/Arsitektur GAN.png Graphic file (type png)
 <use gambar/Arsitektur GAN.png>
-Package pdftex.def Info: gambar/Arsitektur GAN.png  used on input line 233.
+Package pdftex.def Info: gambar/Arsitektur GAN.png  used on input line 231.
 (pdftex.def)             Requested size: 217.25967pt x 217.25967pt.
-[3 <./gambar/metodologi.png> <./gambar/alur pengumpulan data.png> <./gambar/inputGprMax.png> <./gambar/data1.jpg>]
-<gambar/Generator.png, id=23, 1536.74126pt x 352.31625pt>
+<gambar/Generator.png, id=19, 1536.74126pt x 352.31625pt>
 File: gambar/Generator.png Graphic file (type png)
 <use gambar/Generator.png>
-Package pdftex.def Info: gambar/Generator.png  used on input line 249.
+Package pdftex.def Info: gambar/Generator.png  used on input line 245.
 (pdftex.def)             Requested size: 230.50124pt x 52.84515pt.
-<gambar/Discriminator.png, id=24, 524.96124pt x 422.57875pt>
+[3 <./gambar/alur pengumpulan data.png> <./gambar/inputGprMax.png> <./gambar/data1.jpg>]
+<gambar/Discriminator.png, id=25, 524.96124pt x 422.57875pt>
 File: gambar/Discriminator.png Graphic file (type png)
 <use gambar/Discriminator.png>
-Package pdftex.def Info: gambar/Discriminator.png  used on input line 261.
+Package pdftex.def Info: gambar/Discriminator.png  used on input line 257.
 (pdftex.def)             Requested size: 157.48958pt x 126.7746pt.
-<gambar/Training_model.png, id=25, 313.17pt x 794.97pt>
+<gambar/Training_model.png, id=26, 313.17pt x 794.97pt>
 File: gambar/Training_model.png Graphic file (type png)
 <use gambar/Training_model.png>
-Package pdftex.def Info: gambar/Training_model.png  used on input line 292.
+Package pdftex.def Info: gambar/Training_model.png  used on input line 288.
 (pdftex.def)             Requested size: 156.58461pt x 397.48402pt.
  [4 <./gambar/Arsitektur GAN.png> <./gambar/Generator.png> <./gambar/Discriminator.png>]
-Underfull \hbox (badness 5161) in paragraph at lines 348--351
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 5161) in paragraph at lines 344--347
 []\OT1/ptm/m/n/10 Pada kat-e-gori vari-asi ob-jek berben-tuk reg-u-lar, data
  []
 
 <gambar/variasi reguler.png, id=36, 1041.8925pt x 252.945pt>
 File: gambar/variasi reguler.png Graphic file (type png)
 <use gambar/variasi reguler.png>
-Package pdftex.def Info: gambar/variasi reguler.png  used on input line 354.
+Package pdftex.def Info: gambar/variasi reguler.png  used on input line 350.
 (pdftex.def)             Requested size: 208.3748pt x 50.5881pt.
-[5 <./gambar/Training_model.png> <./gambar/variasi reguler.png>]
-<gambar/variasi kompleksitas.png, id=41, 1034.06325pt x 249.93375pt>
+<gambar/variasi kompleksitas.png, id=37, 1034.06325pt x 249.93375pt>
 File: gambar/variasi kompleksitas.png Graphic file (type png)
 <use gambar/variasi kompleksitas.png>
-Package pdftex.def Info: gambar/variasi kompleksitas.png  used on input line 366.
+Package pdftex.def Info: gambar/variasi kompleksitas.png  used on input line 362.
 (pdftex.def)             Requested size: 206.80898pt x 49.98586pt.
+[5 <./gambar/Training_model.png> <./gambar/variasi reguler.png>]
 <gambar/variasi ukuran.png, id=42, 1040.688pt x 252.945pt>
 File: gambar/variasi ukuran.png Graphic file (type png)
 <use gambar/variasi ukuran.png>
-Package pdftex.def Info: gambar/variasi ukuran.png  used on input line 378.
+Package pdftex.def Info: gambar/variasi ukuran.png  used on input line 374.
 (pdftex.def)             Requested size: 208.13391pt x 50.5881pt.
 <gambar/variasi kedalaman.png, id=43, 1035.87pt x 248.127pt>
 File: gambar/variasi kedalaman.png Graphic file (type png)
 <use gambar/variasi kedalaman.png>
-Package pdftex.def Info: gambar/variasi kedalaman.png  used on input line 390.
+Package pdftex.def Info: gambar/variasi kedalaman.png  used on input line 386.
 (pdftex.def)             Requested size: 207.17032pt x 49.62451pt.
 <gambar/Disc_loss.png, id=44, 532.99126pt x 360.1455pt>
 File: gambar/Disc_loss.png Graphic file (type png)
 <use gambar/Disc_loss.png>
-Package pdftex.def Info: gambar/Disc_loss.png  used on input line 404.
+Package pdftex.def Info: gambar/Disc_loss.png  used on input line 400.
 (pdftex.def)             Requested size: 213.19272pt x 144.05563pt.
 <gambar/Gen_total_loss.png, id=45, 534.798pt x 360.1455pt>
 File: gambar/Gen_total_loss.png Graphic file (type png)
 <use gambar/Gen_total_loss.png>
-Package pdftex.def Info: gambar/Gen_total_loss.png  used on input line 415.
+Package pdftex.def Info: gambar/Gen_total_loss.png  used on input line 411.
 (pdftex.def)             Requested size: 213.9154pt x 144.05563pt.
 
-Underfull \hbox (badness 1596) in paragraph at lines 431--437
+Underfull \hbox (badness 1596) in paragraph at lines 427--433
 []\OT1/ptm/m/n/10 Data peneli-tian meng-gu-nakan 200 data hasil sim-u-lasi
  []
 
 [6 <./gambar/variasi kompleksitas.png> <./gambar/variasi ukuran.png> <./gambar/variasi kedalaman.png> <./gambar/Disc_loss.png> <./gambar/Gen_total_loss.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 438.
+               Default added (so using `tbp') on input line 434.
 
 
-Overfull \hbox (3.31943pt too wide) in paragraph at lines 441--486
+Overfull \hbox (2.76749pt too wide) in paragraph at lines 437--482
 [][] 
  []
 
-<gambar/diffMapLingkaran.jpg, id=49, 850.6179pt x 859.2903pt>
-File: gambar/diffMapLingkaran.jpg Graphic file (type jpg)
-<use gambar/diffMapLingkaran.jpg>
-Package pdftex.def Info: gambar/diffMapLingkaran.jpg  used on input line 499.
-(pdftex.def)             Requested size: 127.58717pt x 128.88797pt.
-<gambar/diffMapSegi4.jpg, id=50, 859.2903pt x 865.0719pt>
-File: gambar/diffMapSegi4.jpg Graphic file (type jpg)
-<use gambar/diffMapSegi4.jpg>
-Package pdftex.def Info: gambar/diffMapSegi4.jpg  used on input line 511.
-(pdftex.def)             Requested size: 128.88797pt x 129.75519pt.
-[7 <./gambar/diffMapLingkaran.jpg> <./gambar/diffMapSegi4.jpg>]
-<gambar/diffMapSederhana.jpg, id=55, 841.9455pt x 859.2903pt>
+<gambar/diffMapSederhana.jpg, id=49, 841.9455pt x 859.2903pt>
 File: gambar/diffMapSederhana.jpg Graphic file (type jpg)
 <use gambar/diffMapSederhana.jpg>
-Package pdftex.def Info: gambar/diffMapSederhana.jpg  used on input line 528.
+Package pdftex.def Info: gambar/diffMapSederhana.jpg  used on input line 515.
 (pdftex.def)             Requested size: 126.28636pt x 128.88797pt.
-<gambar/diffMapKompleks.jpg, id=56, 856.3995pt x 867.9627pt>
+[7 <./gambar/diffMapSederhana.jpg>]
+<gambar/diffMapKompleks.jpg, id=54, 856.3995pt x 867.9627pt>
 File: gambar/diffMapKompleks.jpg Graphic file (type jpg)
 <use gambar/diffMapKompleks.jpg>
-Package pdftex.def Info: gambar/diffMapKompleks.jpg  used on input line 540.
+Package pdftex.def Info: gambar/diffMapKompleks.jpg  used on input line 527.
 (pdftex.def)             Requested size: 128.45438pt x 130.18878pt.
-<gambar/diffMapKecil.jpg, id=57, 850.6179pt x 867.9627pt>
+<gambar/diffMapKecil.jpg, id=55, 850.6179pt x 867.9627pt>
 File: gambar/diffMapKecil.jpg Graphic file (type jpg)
 <use gambar/diffMapKecil.jpg>
-Package pdftex.def Info: gambar/diffMapKecil.jpg  used on input line 556.
+Package pdftex.def Info: gambar/diffMapKecil.jpg  used on input line 544.
 (pdftex.def)             Requested size: 127.58717pt x 130.18878pt.
-<gambar/diffMapBesar.jpg, id=58, 856.3995pt x 867.9627pt>
+<gambar/diffMapBesar.jpg, id=56, 856.3995pt x 867.9627pt>
 File: gambar/diffMapBesar.jpg Graphic file (type jpg)
 <use gambar/diffMapBesar.jpg>
-Package pdftex.def Info: gambar/diffMapBesar.jpg  used on input line 568.
+Package pdftex.def Info: gambar/diffMapBesar.jpg  used on input line 556.
 (pdftex.def)             Requested size: 128.45438pt x 130.18878pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 573--577
-
- []
-
-<gambar/diffMapDangkal.jpg, id=59, 859.2903pt x 870.8535pt>
+<gambar/diffMapDangkal.jpg, id=57, 859.2903pt x 870.8535pt>
 File: gambar/diffMapDangkal.jpg Graphic file (type jpg)
 <use gambar/diffMapDangkal.jpg>
-Package pdftex.def Info: gambar/diffMapDangkal.jpg  used on input line 584.
+Package pdftex.def Info: gambar/diffMapDangkal.jpg  used on input line 573.
 (pdftex.def)             Requested size: 128.88797pt x 130.62238pt.
-[8 <./gambar/diffMapSederhana.jpg> <./gambar/diffMapKompleks.jpg> <./gambar/diffMapKecil.jpg> <./gambar/diffMapBesar.jpg>]
-<gambar/diffMapDalam.jpg, id=63, 853.5087pt x 867.9627pt>
+ [8 <./gambar/diffMapKompleks.jpg> <./gambar/diffMapKecil.jpg> <./gambar/diffMapBesar.jpg> <./gambar/diffMapDangkal.jpg>]
+<gambar/diffMapDalam.jpg, id=61, 853.5087pt x 867.9627pt>
 File: gambar/diffMapDalam.jpg Graphic file (type jpg)
 <use gambar/diffMapDalam.jpg>
-Package pdftex.def Info: gambar/diffMapDalam.jpg  used on input line 596.
+Package pdftex.def Info: gambar/diffMapDalam.jpg  used on input line 585.
 (pdftex.def)             Requested size: 128.02078pt x 130.18878pt.
+<gambar/diffMapLingkaran.jpg, id=62, 850.6179pt x 859.2903pt>
+File: gambar/diffMapLingkaran.jpg Graphic file (type jpg)
+<use gambar/diffMapLingkaran.jpg>
+Package pdftex.def Info: gambar/diffMapLingkaran.jpg  used on input line 602.
+(pdftex.def)             Requested size: 127.58717pt x 128.88797pt.
+<gambar/diffMapSegi4.jpg, id=63, 859.2903pt x 865.0719pt>
+File: gambar/diffMapSegi4.jpg Graphic file (type jpg)
+<use gambar/diffMapSegi4.jpg>
+Package pdftex.def Info: gambar/diffMapSegi4.jpg  used on input line 614.
+(pdftex.def)             Requested size: 128.88797pt x 129.75519pt.
 
-Underfull \hbox (badness 2735) in paragraph at lines 622--625
+Underfull \hbox (badness 2735) in paragraph at lines 626--632
 []\OT1/ptm/m/n/10 Hasil peneli-tian dari peng-gu-naan model GAN un-tuk
  []
 
-[9 <./gambar/diffMapDangkal.jpg> <./gambar/diffMapDalam.jpg>]
-
-LaTeX Warning: Citation `b4' on page 10 undefined on input line 653.
-
-
-LaTeX Warning: Citation `b5' on page 10 undefined on input line 654.
+[9 <./gambar/diffMapDalam.jpg> <./gambar/diffMapLingkaran.jpg> <./gambar/diffMapSegi4.jpg>]
+Underfull \hbox (badness 5119) in paragraph at lines 648--649
+[]\OT1/ptm/m/n/8 van den Bosch, I., Lam-bot, S., Huy-nen, I., Marc, A., and
+ []
 
 
-LaTeX Warning: Citation `b6' on page 10 undefined on input line 659.
+Underfull \hbox (badness 3449) in paragraph at lines 648--649
+\OT1/ptm/m/n/8 Druyts, P. (2006). Ac-cu-rate and ef-fi-cient mod-el-ing of mono-s-
+ []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 669--670
+Underfull \hbox (badness 2418) in paragraph at lines 648--649
+\OT1/ptm/m/n/8 tatic gpr sig-nal of di-elec-tric tar-gets buried in strat-i-fied me-dia.
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 652--653
 []\OT1/ptm/m/n/8 Kruk, J., Liu, T., Mozaf-fari, A., Guet-ing, N., Klotzsche, A.,
  []
 
@@ -602,23 +603,19 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[10] (conference_101719.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[10] (conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 5006 strings out of 476360
- 83521 string characters out of 5784685
- 1936993 words of memory out of 5000000
- 25332 multiletter control sequences out of 15000+600000
- 556396 words of font info for 120 fonts, out of 8000000 for 9000
+ 5002 strings out of 476360
+ 83503 string characters out of 5784685
+ 1937993 words of memory out of 5000000
+ 25329 multiletter control sequences out of 15000+600000
+ 555289 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,62p,508b,304s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (10 pages, 2291736 bytes).
+ 57i,11n,62p,530b,304s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PASU SIAHAAN/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on conference_101719.pdf (10 pages, 2300466 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

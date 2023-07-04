@@ -10,11 +10,11 @@ Berdasarkan hasil penelitian dari penggunaan model conditional GAN untuk merekon
 
 \begin{enumerate}[nolistsep]
 
-  \item Model GAN mampu mempelajari pembuatan dari gambar input yang berupa B-scan GPR menjadi gambar struktur geometri bawah permukaan beton.
-  
-  \item Output model GAN mampu menunjukkan sedikit kesamaan posisi dan ukuran objek dengan objek pada \emph{ground truth}.
+  \item Selama proses pelatihan model GAN, grafik Total Generator Loss mengalami penurunan nilai dari awal hingga akhir, sedangkan grafik Total Discriminator Loss mengalami penurunan nilai di awal, kemudian mengalami penaikan nilai di ahir. 
+  Hal ini menunjukkan bahwa Generator semakin baik dalam menghasilkan gambar yang diinginkan. Namun, Discriminator awalnya semakin baik dalam membedakan data asli dengan data palsu, namun pada akhir pelatihan semakin kesulitan dalam membedakannya.
 
-  \item Bentuk dari objek dengan variasi bentuk yang lebih kompleks, lebih besar, atau berbentuk segi empat masih belum sesuai dengan \emph{ground truth} yang diharapkan. 
+  \item Berdasarkan hasil evaluasi matriks dari 40 test data GPR ($RMS_{rerata}$ = 0.247, $MSE_{rerata}$ = 0.070, $SSIM_{rerata}$=0.833), model GAN bekerja lebih baik dalam mensintesis gambar struktur bawah permukaan untuk objek dengan posisi dekat dengan permukaan (RMS = 0.239, MSE = 0.63, SSIM = 0.841), berbentuk lingkaran (RMS = 0.237, MSE = 0.064, SSIM = 0.843) dan berbentuk segi empat (RMS = 0.219, MSE = 0.058, SSIM = 0.838).
+  Namun, berdasarkan hasil evaluasi visual, output model cukup mampu menunjukkan posisi objek, dan masih belum bisa menunjukkan bentuk dan ukuran objek untuk setiap variasinya.
 
 \end{enumerate}
 

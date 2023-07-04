@@ -15,26 +15,14 @@ Dataset penelitian divariasikan berdasarkan kategori sebagai berikut.
 
 \begin{enumerate}[nolistsep]
 
-  \item Objek berbentuk regular
-
   \item Kompleksitas bentuk objek
 
   \item Ukuran objek
   
   \item Posisi objek di bawah permukaan
 
+  \item Objek berbentuk regular
 \end{enumerate}
-
-Pada kategori variasi objek berbentuk regular, data dibedakan berdasar bentuk reguler objek, yaitu data dengan objek berbentuk lingkaran (silinder tampak depan) dan data dengan objek berbentuk segi empat (silinder tampak samping). 
-Objek hanya terdiri dari 1 objek penyusun, dengan posisi dan ukuran yang dibebaskan, yaitu posisi sekitar 2.5-10 cm di bawah permukaan dan ukuran sekitar 3-10 cm. 
-Contoh data untuk variasi ini dapat dilihat pada gambar \ref{fig:regularData}.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.4]{gambar/variasi reguler.png}
-  \caption{Data dengan Objek Berbentuk Lingkaran (Kanan) dan Data dengan Objek Berbentuk Segi Empat (Kiri)}
-  \label{fig:regularData}
-\end{figure}
 
 Pada kategori variasi kompleksitas bentuk objek, data dibedakan berdasar banyak objek penyusun yang digabung, yaitu data dengan objek sederhana dan data dengan objek kompleks. 
 Objek sederhana memiliki sekitar 3-6 objek penyusun, sedangkan objek kompleks memiliki sekitar 10-15 objek penyusun. 
@@ -72,6 +60,18 @@ Contoh data untuk variasi ini dapat dilihat pada gambar \ref{fig:posisiData}.
   \label{fig:posisiData}
 \end{figure}
 
+Pada kategori variasi objek berbentuk regular, data dibedakan berdasar bentuk reguler objek, yaitu data dengan objek berbentuk lingkaran (silinder tampak depan) dan data dengan objek berbentuk segi empat (silinder tampak samping). 
+Objek hanya terdiri dari 1 objek penyusun, dengan posisi dan ukuran yang dibebaskan, yaitu posisi sekitar 2.5-10 cm di bawah permukaan dan ukuran sekitar 3-10 cm. 
+Contoh data untuk variasi ini dapat dilihat pada gambar \ref{fig:regularData}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.4]{gambar/variasi reguler.png}
+  \caption{Data dengan Objek Berbentuk Lingkaran (Kanan) dan Data dengan Objek Berbentuk Segi Empat (Kiri)}
+  \label{fig:regularData}
+\end{figure}
+\newpage
+
 \section{Hasil Pelatihan Model GAN}
 \label{sec:hasilpelatihanGAN}
 
@@ -106,13 +106,11 @@ Dalam proses pelatihan model GAN, penting untuk membandingkan nilai atau grafik 
 Pada kedua grafik, dapat dilihat bahwa awalnya perubahan kedua nilai \emph{loss} sama-sama menurun, yang menunjukkan proses model dalam mempelajari data berjalan dengan baik. 
 Namun, sekitar pukul 00.00 grafik dari \emph{discriminator loss} menjadi semakin meningkat, sedangkan grafik \emph{generator loss} tetap semakin menurun. 
 Hal ini menunjukkan bahwa pada interval waktu tersebut, discriminator sudah mulai kesulitan dalam membedakan gambar asli dengan gambar palsu, sedangkan generator tetap semakin baik dalam menghasilkan output yang sesuai dengan aslinya.
-
+\newpage
 \section{Hasil Evaluasi Output GAN}
 \label{sec:evaluasiOutput}
 
-Data penelitian menggunakan 200 data hasil simulasi gprMax untuk gambar \emph{B-scan} GPR beserta bentuk geometri dari simulasi. 
-Dari 200 total data, 40 data digunakan sebagai test data dan dilakukan evaluasi model GAN. 
-Proses evaluasi dilakukan dengan evaluasi matriks kemudian dilanjut dengan evaluasi visual. 
+Proses evaluasi dilakukan dengan evaluasi matriks output model kemudian dilanjut dengan evaluasi visual. 
 Evaluasi matriks dilakukan dengan menggunakan 3 metode, yaitu metode RMS, MSE, dan SSIM. 
 Untuk nilai hasil RMS dan MSE dikatakan baik jika nilainya semakin mendekati 0, sedangkan untuk nilai hasil SSIM dikatakan baik jika nilainya semakin mendekati 1. 
 Hasil dari evaluasi matriks untuk keseluruhan data dapat dilihat pada tabel \ref{tb:evaluasimatriks}. 
@@ -123,87 +121,73 @@ Hasil dari evaluasi matriks untuk keseluruhan data dapat dilihat pada tabel \ref
   \begin{tabular}{|l|cc|cc|cc|}
   \hline
   \multicolumn{1}{|c|}{Variasi Data}                  & \multicolumn{2}{c|}{RMS}                                                                               & \multicolumn{2}{c|}{MSE}                                                                                   & \multicolumn{2}{c|}{SSIM}                                                                            \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}24.343} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}849.059}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.861} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}23.515} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}925.548}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.845} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}26.168} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1232.388} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.826} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}24.361} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1047.606} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.841} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Bentuk Regular Lingkaran}          & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}24.048} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}24.487} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1056.576} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1022.235} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.843} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.843} \\ \hline
-                                                      & \multicolumn{1}{c|}{26.549}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{1160.144}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{0.843}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{l|}{28.027}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{1060.923}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.849}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{l|}{24.116}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{919.714}                          & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.857}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{l|}{27.656}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{1266.811}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.833}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Bentuk Regular Segi Empat}         & \multicolumn{1}{l|}{30.177}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}27.305} & \multicolumn{1}{l|}{1395.066}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1160.532} & \multicolumn{1}{l|}{0.809}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.838} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}28.446} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1416.187} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.848} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}30.685} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1753.308} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.811} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}29.959} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1658.955} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.833} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}25.723} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1341.356} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.837} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Bentuk Objek Sederhana}            & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}26.653} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}28.293} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1469.097} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1527.781} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.816} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}25.317} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1368.814} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.841} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}28.214} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1611.368} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.830} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}31.084} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1970.674} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.832} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}32.412} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}2002.734} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.837} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Bentuk Objek Kompleks}             & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}30.085} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}29.422} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1954.447} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1781.607} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.821} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.832} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}34.674} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1933.112} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.799} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}23.165} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}919.539}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.831} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}28.873} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1529.034} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.829} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}21.590} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}872.725}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.857} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Ukuran Objek Kecil}                & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}25.036} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}26.668} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1199.543} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1290.791} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.829} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}27.415} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1476.994} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.818} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}35.830} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}2220.673} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.817} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}28.350} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1602.741} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.825} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}27.847} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1421.890} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.833} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Ukuran Objek Besar}                & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}26.131} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}29.115} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1302.681} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1604.996} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.826} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.824} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}27.983} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1259.261} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.842} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}22.333} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}913.083}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.847} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}27.373} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1353.813} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.821} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}25.660} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1173.256} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.847} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Posisi Objek Dekat dari Permukaan} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}26.464} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}25.963} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1078.885} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1155.660} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.846} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.841} \\ \hline
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}30.246} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1603.105} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.816} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}24.919} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1201.229} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.828} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}22.354} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}910.400}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.852} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}25.499} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1168.513} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.823} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
-  \multirow{-5}{*}{Posisi Objek Jauh dari Permukaan}  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}27.806} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}26.165} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}1454.938} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}1267.637} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.831} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
-  Rata-Rata                                           & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFFF}27.177}                                                    & \multicolumn{2}{c|}{1351.405}                                                                              & \multicolumn{2}{c|}{0.833}                                                                           \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.256} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.072}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.848} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.271} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.082}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.811} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.265} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.078}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.833} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.234} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.063}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.837} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Bentuk Objek Sederhana}          & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.249} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.255}  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.071}  & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.073}       & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.816} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
+                                                      & \multicolumn{1}{c|}{0.260}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{0.075}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{0.841}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{l|}{0.246}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{0.068}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.830}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{l|}{0.266}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{0.077}                          & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.832}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{l|}{0.260}                         & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{l|}{0.074}                         & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{l|}{0.837}                         & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Bentuk Objek Kompleks}         & \multicolumn{1}{l|}{0.264}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.259} & \multicolumn{1}{l|}{0.080}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.075} & \multicolumn{1}{l|}{0.821}                         & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.832} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.283} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.091} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.799} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.256} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.073} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.831} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.231} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.065} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.829} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.246} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.066} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.857} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Ukuran Objek Kecil}            & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.251} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.254} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.069} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.073} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.829} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.267} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.081} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.818} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.259} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.076} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.817} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.236} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.068} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.825} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.279} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.084} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.833} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Ukuran Objek Besar}             & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.275} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.263} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.083} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.078} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.826} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.824} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.241} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.061} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.842} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.231} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.060}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.847} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.246} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.069} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.821} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.224} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.057}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.847} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Posisi Objek Dekat dari Permukaan}                & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.252} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.239} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.070} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.063} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.846} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.841} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.257} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.076} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.812} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.255} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.073} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.828} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.252} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.069} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.851} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.263} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.075} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.823} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Posisi Objek Jauh dari Permukaan}                & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.231} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.252} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.065} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.072} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.831} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.829} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.206} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.048} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.861} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.217} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.056}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.844} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.264} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.078} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.826} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.252} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.071} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.841} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Bentuk Objek Lingkaran} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.249} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.237} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.069} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.064} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.843} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.843} \\ \hline
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.205} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.053} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.843} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.197} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.047} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.849} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.204} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.049}  & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.857} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+                                                      & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.257} & \cellcolor[HTML]{FFFFFF}                         & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.075} & \cellcolor[HTML]{FFFFFF}                           & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.833} & \cellcolor[HTML]{FFFFFF}                        \\ \cline{2-2} \cline{4-4} \cline{6-6}
+  \multirow{-5}{*}{Bentuk Objek Segi Empat}  & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.233} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.219} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.065} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.058} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFFF}0.809} & \multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}0.838} \\ \hline
+  Rata-Rata                                           & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFFF}0.247}                                                    & \multicolumn{2}{c|}{0.070}                                                                              & \multicolumn{2}{c|}{0.833}                                                                           \\ \hline
   \end{tabular}
 \end{table}
+
+Berdasarkan keseluruhan hasil evaluasi matriks, diperoleh rata-rata RMS = 0.247, MSE = 0.070, dan SSIM = 0.833. 
+Ketika pelaksanaan penelitian ini, belum ditemukan standar nilai RMS, MSE, dan SSIM yang bersifat universal atau mutlak untuk menentukan apakah kesamaan 2 buah gambar dianggap cukup identik atau belum. 
+Oleh karena itu, nilai rata-rata ini digunakan sebagai standar kemampuan model dalam menghasilkan data untuk setiap variasinya.
+
+Untuk variasi yang nilai rata-rata RMS dan MSE-nya lebih kecil dari nilai rata-rata RMS dan MSE total, dapat dikatakan perbedaan intensitas piksel antara gambar yang disintesis dengan gambar asli cukup dekat. 
+Variasi tersebut diantaranya variasi posisi objek dekat dari permukaan, bentuk regular lingkaran, dan bentuk regular segi empat. 
+Sebaliknya, untuk variasi yang nilai rata-rata RMS dan MSE-nya lebih besar dari nilai rata-rata RMS dan MSE total, dapat dikatakan perbedaan intensitas piksel antara gambar yang disintesis dengan gambar asli cukup jauh. 
+Variasi tersebut diantaranya variasi bentuk objek sederhana, bentuk objek kompleks, ukuran objek kecil, ukuran objek besar, dan posisi objek jauh dari permukaan.
+
+Untuk variasi yang nilai rata-rata SSIM-nya lebih besar dari nilai rata-rata SSIM total, dapat dikatakan kesamaan struktural antara gambar yang disintesis dengan gambar asli hampir sama. 
+Variasi tersebut diantaranya variasi posisi objek dekat dari permukaan, bentuk regular lingkaran, dan bentuk regular segi empat. 
+Sebaliknya, untuk variasi yang nilai rata-rata SSIM-nya lebih kecil dari nilai rata-rata SSIM total, dapat dikatakan kesamaan struktural antara gambar yang disintesis dengan gambar asli cukup jauh. 
+Variasi tersebut diantaranya variasi bentuk objek sederhana, bentuk objek kompleks, ukuran objek kecil, ukuran objek besar, dan posisi objek jauh dari permukaan.
 
 Setelah melakukan evaluasi matriks, dilakukan evaluasi visual. 
 Evaluasi visual dilakukan dengan menggunakan fungsi \emph{image differencing}, yang mengurangkan piksel-piksel dari gambar asli dengan gambar sintesis. 
 Hasil evaluasi visual akan ditampilkan dengan gambar, dimana semakin gelap (hitam) warna suatu daerah gambar tertentu, maka semakin identik gambar asli dengan gambar sintesis. 
 Sebaliknya, semakin terang (putih) warna suatu daerah gambar tertentu, maka semakin berbeda gambar asli dengan gambar sintesis.
 
-Pada variasi objek berbentuk regular, terlihat untuk objek berbentuk lingkaran memiliki rata-rata nilai evaluasi matriks yang lebih baik dari objek berbentuk segi empat. 
-Perbedaan rata-rata evaluasi matriks terlihat cukup jauh di antara kedua variasi data. 
-Namun, untuk beberapa data terdapat beberapa anomali, seperti data ketiga dari variasi objek lingkaran dan data kedua dari objek segi empat. 
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.15]{gambar/diffMapLingkaran.jpg}
-  \caption{Evaluasi Visual Data Variasi Bentuk Regular Lingkaran}
-  \label{fig:diffmaplingkaran}
-\end{figure}
-
-Data ketiga dari variasi objek lingkaran memiliki nilai evaluasi matriks yang cukup buruk dari data lain dari variasi yang sama. 
-Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmaplingkaran}. 
-Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
-Hal ini menunjukkan bahwa posisi benda belum sepenuhnya dapat dideteksi oleh model.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.15]{gambar/diffMapSegi4.jpg}
-  \caption{Evaluasi Visual Data Variasi Bentuk Regular Segi Empat}
-  \label{fig:diffmapsegi4}
-\end{figure}
-
-Data kedua dari variasi objek segi empat memiliki nilai evaluasi matriks yang cukup baik dari data lain dari variasi yang sama. 
-Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapsegi4}. 
-Pada gambar evaluasi visual dapat dilihat bahwa tidak ada irisan dari gambar sintesis dengan gambar asli, bahkan gambar sintesis hampir tidak memiliki bentuk. 
-Hal ini menunjukkan bahwa model masih belum bisa mensintesis gambar dari objek regular berbentuk persegi, yang disebabkan oleh kurangnya data yang dipelajari ketika proses training model.
-
 Pada variasi kompleksitas bentuk objek, terlihat untuk objek berbentuk sederhana memiliki rata-rata nilai evaluasi matriks yang lebih baik dari objek berbentuk kompleks. 
 Perbedaan rata-rata evaluasi matriks terlihat cukup dekat di antara kedua variasi data.  
-Nilai rata-rata SSIM data objek sederhana yang lebih kecil dari nilai rata-rata SSIM data objek kompleks. 
-Namun, nilai rata-rata RMS dan MSE data objek sederhana lebih kecil dari nilai rata-rata RMS dan MSE data objek kompleks. 
+Nilai rata-rata RMS dan MSE data objek sederhana lebih kecil dari nilai rata-rata RMS dan MSE data objek kompleks. 
+Namun, nilai rata-rata SSIM data objek sederhana lebih kecil dari nilai rata-rata SSIM data objek kompleks. 
 
 \begin{figure}[ht]
   \centering
@@ -212,10 +196,10 @@ Namun, nilai rata-rata RMS dan MSE data objek sederhana lebih kecil dari nilai r
   \label{fig:diffmapsederhana}
 \end{figure}
 
-Untuk variasi data dengan objek sederhana akan diambil data kedua karena memiliki nilai SSIM yang lebih buruk dari data lain. 
+Untuk variasi data dengan objek sederhana akan diambil data pertama karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi bentuk objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapsederhana}.
-Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
-Hal ini menunjukkan bahwa posisi benda belum sepenuhnya dapat dideteksi oleh model.
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup luas sehingga memiliki area error yang cukup sempit. 
+Hal ini menunjukkan bahwa output model sudah bisa menunjukkan posisi dan ukuran objek, namun masih belum bisa menunjukkan bentuk objek.
 
 \begin{figure}[ht]
   \centering
@@ -223,15 +207,16 @@ Hal ini menunjukkan bahwa posisi benda belum sepenuhnya dapat dideteksi oleh mod
   \caption{Evaluasi Visual Data Variasi Bentuk Kompleks}
   \label{fig:diffmapkompleks}
 \end{figure}
-
-Untuk variasi data dengan objek kompleks akan diambil data pertama karena memiliki nilai SSIM yang lebih baik dari data lain. 
+\newpage
+Untuk variasi data dengan objek kompleks akan diambil data pertama karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi bentuk objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapkompleks}. 
-Pada gambar evaluasi visual dapat dilihat bahwa irisan dari gambar sintesis dengan gambar asli merupakan gambar sintesis sepenuhnya. 
-Hal ini menunjukkan bahwa model sudah bisa memprediksi posisi objek, namun masih belum bisa mensintesis ukuran objek dari objek berbentuk kompleks.
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari gambar sintesis dengan gambar asli hampir merupakan gambar sintesis sepenuhnya. 
+Hal ini menunjukkan bahwa output model sudah bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
 
 Pada variasi ukuran objek, terlihat untuk objek berukuran kecil memiliki rata-rata nilai evaluasi matriks yang lebih baik dari objek berukuran besar. 
-Perbedaan rata-rata RMS dan MSE terlihat cukup jauh di antara kedua variasi data, sedangkan rata-rata SSIM terlihat cukup dekat. 
-Namun, untuk beberapa data terdapat beberapa anomali, seperti data pertama dari variasi objek kecil dan data keempat dari objek besar. 
+Perbedaan rata-rata evaluasi matriks terlihat cukup jauh di antara kedua variasi data. 
+Nilai rata-rata RMS dan MSE data objek berukuran kecil lebih kecil dari nilai rata-rata RMS dan MSE data objek berukuran besar. 
+Namun, nilai rata-rata SSIM data objek berukuran kecil lebih besar dari nilai rata-rata SSIM data objek berukuran besar. 
 
 \begin{figure}[ht]
   \centering
@@ -240,10 +225,10 @@ Namun, untuk beberapa data terdapat beberapa anomali, seperti data pertama dari 
   \label{fig:diffmapkecil}
 \end{figure}
 
-Data pertama dari variasi data dengan objek kecil memiliki nilai evaluasi matriks yang lebih buruk dari data lain. 
+Untuk variasi data dengan objek berukuran kecil akan diambil data kelima karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi ukuran objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapkecil}. 
 Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
-Hal ini menunjukkan bahwa posisi benda belum sepenuhnya dapat dideteksi oleh model.
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi dan ukuran objek, namun masih belum bisa menunjukkan bentuk objek.
 
 \begin{figure}[ht]
   \centering
@@ -252,14 +237,15 @@ Hal ini menunjukkan bahwa posisi benda belum sepenuhnya dapat dideteksi oleh mod
   \label{fig:diffmapbesar}
 \end{figure}
 
-Data keempat dari variasi data dengan objek besar karena memiliki nilai evaluasi matriks yang lebih baik dari data lain. 
+Untuk variasi data dengan objek berukuran besar akan diambil data pertama karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi ukuran objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapbesar}. 
-Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup luas sehingga memiliki area error yang cukup sedikit. 
-Hal ini menunjukkan bahwa posisi beserta ukuran benda hampir dapat dideteksi oleh model. \\
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sempit sehingga memiliki area error yang cukup luas. 
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
 
-Pada variasi posisi objek, terlihat untuk objek dengan posisi dekat dengan permukaan memiliki rata-rata nilai evaluasi matriks yang lebih baik dari objek dengan posisi jauh dengan permukaan. 
-Perbedaan rata-rata evaluasi matriks terlihat cukup dekat di antara kedua variasi data, sedangkan rata-rata SSIM terlihat cukup jauh. 
-Namun, untuk beberapa data terdapat beberapa anomali, seperti data ketiga dari variasi posisi objek dekat dari permukaan dan data ketiga dari variasi posisi objek jauh dari permukaan. 
+Pada variasi posisi objek, terlihat untuk objek dengan posisi dekat dengan permukaan memiliki rata-rata nilai evaluasi matriks yang lebih baik dari objek dengan posisi jauh dengan permukaan.
+Perbedaan rata-rata evaluasi matriks terlihat cukup jauh di antara kedua variasi data. 
+Nilai rata-rata RMS dan MSE data posisi objek dekat dari permukaan lebih kecil dari nilai rata-rata RMS dan MSE data posisi objek jauh dari permukaan. 
+Namun, nilai rata-rata SSIM data posisi objek dekat dari permukaan lebih besar dari nilai rata-rata SSIM data posisi objek jauh dari permukaan. 
 
 \begin{figure}[ht]
   \centering
@@ -268,10 +254,10 @@ Namun, untuk beberapa data terdapat beberapa anomali, seperti data ketiga dari v
   \label{fig:diffmapdangkal}
 \end{figure}
 
-Data ketiga dari variasi posisi objek dekat dengan permukaan memiliki nilai evaluasi matriks yang lebih buruk dari data lain. 
+Untuk variasi data dengan posisi objek dekat dari permukaan akan diambil data pertama karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi posisi objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapdangkal}. 
-Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas . 
-Hal ini menunjukkan bahwa posisi beserta ukuran benda belum sepenuhnya dapat dideteksi oleh model.
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
 
 \begin{figure}[ht]
   \centering
@@ -279,22 +265,37 @@ Hal ini menunjukkan bahwa posisi beserta ukuran benda belum sepenuhnya dapat did
   \caption{Evaluasi Visual Data Variasi Posisi Jauh dengan Permukaan}
   \label{fig:diffmapdalam}
 \end{figure}
-
-Data ketiga dari variasi posisi objek jauh dengan permukaan memiliki nilai evaluasi matriks yang lebih buruk dari data lain. 
+\newpage
+Untuk variasi data dengan posisi objek jauh dari permukaan akan diambil data kedua karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi posisi objek dari data lain. 
 Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapdalam}. 
 Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
-Hal ini menunjukkan bahwa posisi beserta ukuran benda belum sepenuhnya dapat dideteksi oleh model.  
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
 
-Secara keseluruhan evaluasi matriks test data, diperoleh rata-rata RMS = 27.177, MSE = 1351.405, dan SSIM = 0.833. 
-Tidak ada standar nilai RMS, MSE, dan SSIM yang bersifat universal atau mutlak untuk menentukan apakah suatu gambar dianggap baik atau buruk. 
-Oleh karena itu, nilai rata-rata ini digunakan sebagai standar kemampuan model dalam menghasilkan data setiap variasinya.
+Pada variasi bentuk regular objek, terlihat untuk objek berbentuk lingkaran memiliki rata-rata nilai evaluasi matriks yang lebih buruk dari objek berbentuk segi empat.
+Perbedaan rata-rata evaluasi matriks terlihat cukup jauh di antara kedua variasi data. 
+Nilai rata-rata RMS dan MSE data objek berbentuk lingkaran lebih besar dari nilai rata-rata RMS dan MSE data objek berbentuk segi empat. 
+Namun, nilai rata-rata SSIM data objek berbentuk lingkaran lebih besar dari nilai rata-rata SSIM data objek berbentuk segi empat. 
 
-Untuk variasi yang nilai rata-rata RMS dan MSE-nya lebih kecil dari nilai rata-rata RMS dan MSE total, dapat dikatakan intensitas piksel antara gambar yang disintesis dengan gambar asli hampir sama. 
-Variasi tersebut diantaranya variasi bentuk regular lingkaran, bentuk regular segi empat, ukuran objek kecil, posisi objek dekat dari permukaan, dan posisi objek jauh dari permukaan. 
-Sebaliknya, untuk variasi yang nilai rata-rata RMS dan MSE-nya lebih besar dari nilai rata-rata RMS dan MSE total, dapat dikatakan intensitas piksel antara gambar yang disintesis dengan gambar asli cukup jauh. 
-Variasi tersebut diantaranya variasi bentuk objek sederhana, bentuk objek kompleks, dan ukuran objek besar.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.15]{gambar/diffMapLingkaran.jpg}
+  \caption{Evaluasi Visual Data Variasi Bentuk Regular Lingkaran}
+  \label{fig:diffmaplingkaran}
+\end{figure}
 
-Untuk variasi yang nilai rata-rata SSIM-nya lebih besar dari nilai rata-rata SSIM total, dapat dikatakan kesamaan struktural antara gambar yang disintesis dengan gambar asli hampir sama. 
-Variasi tersebut diantaranya variasi bentuk regular lingkaran, bentuk regular segi empat, dan posisi objek jauh dari permukaan. 
-Sebaliknya, untuk variasi yang nilai rata-rata SSIM-nya lebih kecil dari nilai rata-rata SSIM total, dapat dikatakan kesamaan struktural antara gambar yang disintesis dengan gambar asli cukup jauh. 
-Variasi tersebut diantaranya variasi bentuk objek sederhana, bentuk objek kompleks, ukuran objek kecil, ukuran objek besar, dan posisi objek jauh dari permukaan.
+Untuk variasi data dengan bentuk lingkaran akan diambil data kelima karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi bentuk regular objek dari data lain. 
+Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmaplingkaran}. 
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.15]{gambar/diffMapSegi4.jpg}
+  \caption{Evaluasi Visual Data Variasi Bentuk Regular Segi Empat}
+  \label{fig:diffmapsegi4}
+\end{figure}
+
+Untuk variasi data dengan bentuk segi empat akan diambil data pertama karena memiliki nilai evaluasi matriks yang lebih mendekati rata-rata variasi bentuk regular objek dari data lain. 
+Evaluasi visual dari data dapat dilihat dari gambar \ref{fig:diffmapsegi4}. 
+Pada gambar evaluasi visual dapat dilihat bahwa irisan dari objek sintesis dengan objek asli cukup sedikit sehingga memiliki area error yang cukup luas. 
+Hal ini menunjukkan bahwa output model hampir bisa menunjukkan posisi objek, namun masih belum bisa menunjukkan bentuk dan ukuran objek.
