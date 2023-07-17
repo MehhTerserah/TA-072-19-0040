@@ -150,7 +150,7 @@ Untuk setiap 1000 iterasi, akan ditampilkan proses sintesis gambar, dan untuk se
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.47]{gambar/Training_model.png}
-  \caption{Diagram Proses Training Model Keseluruhan}
+  \caption{Flowchart Proses Training Model Keseluruhan}
   \label{fig:training}
 \end{figure}
 
@@ -194,15 +194,6 @@ GprMax menggunakan metode Finite Difference Time-Domain (FDTD) dalam pemodelan n
 Kode pada gprMax aslinya berbasis C, dan sekarang sudah sepenuhnya ditulis ulang menggunakan kombinasi bahasa Python dan Cython. 
 GprMax menggunakan file berbasis teks di mana setiap parameter simulasi ditentukan oleh pengguna. 
 Parameter tersebut antara lain ukuran model, diskritasi, waktu simulasi, bentuk geometri, material, dan eksitasi.
-
-\subsection{Paraview}
-\label{paraview}
-
-Paraview merupakan suatu aplikasi untuk memvisualisasikan dan menganalisis kumpulan data yang sangat besar.
-Aplikasi ini menyediakan \emph{Graphical User Interface} (GUI) untuk pembuatan dan pelaksanaan visualisasi secara dinamis.
-ParaView mendukung visualisasi dan rendering kumpulan data besar dengan menjalankan program ini secara paralel pada mesin memori bersama atau terdistribusi. 
-ParaView mendukung \emph{hardware-accelerated parallel rendering} dan mencapai kinerja \emph{rendering} yang interaktif melalui teknik \emph{level-of-detail}.
-Desain menyeimbangkan dan mengintegrasikan sejumlah persyaratan yang beragam termasuk kemampuan untuk menangani data besar, kemudahan penggunaan, dan ekstensibilitas oleh pengembang \parencite{paraview}.
 
 \subsection{Jupyter Notebook}
 \label{subsec:jupyter}

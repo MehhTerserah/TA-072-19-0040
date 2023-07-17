@@ -69,6 +69,55 @@ Selama perambatan, sinyal akan mengalami berbagai kerugian (loss).
 Jika sinyal bertabrakan dengan bahan yang tidak homogen dengan media perambatan, maka sinyal akan dipantulkan. 
 Sinyal ini akan diterima dan diproses oleh antena penerima.
 
+Perambatan gelombang elektromagnetik diatur oleh sifat dielektrik medium yang dilaluinya, yaitu permitivitas dielektrik ($\varepsilon$), konduktivitas listrik ($\sigma$) dan permeabilitas magnetik ($\mu$). 
+Secara khusus, permitivitas dielektrik dan konduktivitas listrik sangat mempengaruhi perilaku gelombang perambatan, masing-masing dalam hal kecepatan gelombang dan atenuasi gelombang, dan permeabilitas magnetik sama untuk semua bahan non-magnetik dengan permeabilitas magnetik ruang bebas $\mu_{0}$ dan tidak mempengaruhi perambatan dari gelombang EM. 
+Kedalaman penetrasi dan resolusi spasial dipengaruhi oleh beberapa faktor, di antaranya adalah frekuensi sinyal yang dipancarkan dan jenis material yang diselidiki. \parencite{gprIntroduction}
+
+Secara teoritis, nilai medan elektromagnetik dijelaskan melalui persamaan Maxwell : 
+
+\begin{equation}
+  \label{eq:maxWellE}
+  \nabla  x \vec{E} = - \frac{ \delta  \vec{B}}{ \delta t} 
+\end{equation}
+
+\begin{equation}
+  \label{eq:maxWellH}
+  \nabla x  \vec{H}  =   \vec{J}  + \frac{ \delta  \vec{D} }{ \delta t} 
+\end{equation}
+
+\begin{equation}
+  \label{eq:maxWellD}
+  \nabla . \vec{D} =  q
+\end{equation}
+
+\begin{equation}
+  \label{eq:maxWellB}
+  \nabla . \vec{B} =  0
+\end{equation}
+
+Dimana $\vec{E}$ ($V.m^{-1}$) merupakan vektor kuat medan listrik, q ($C.m^{-3}$) merupakan kerapatan muatan listrik, $\vec{B}$ (T) merupakan vektor kerapatan fluks magnet, $\vec{J}$($A.m^{-2}$) merupakan vektor kerapatan arus listrik, $\vec{D}$ ($C.m^{-2}$) merupakan vektor perpindahan listrik, t (s) merupakan waktu, dan $\vec{H}$ ($A.m^{-1}$) merupakan vektor intensitas medan magnet. \parencite{jol2008ground}
+
+Sebaliknya, perilaku medium tempat gelombang elektromagnetik merambat, dapat dijelaskan oleh hubungan konstitutif. 
+Hubungan konstitutif adalah sarana untuk menggambarkan respons material terhadap bidang elektromagnetik. 
+Secara matematis, hubungan konstitutif dirumuskan sebagai berikut:
+\begin{equation}
+  \label{eq:mediumJ}
+  \vec{J} =  \sigma \vec{E}
+\end{equation}
+
+\begin{equation}
+  \label{eq:mediumD}
+  \vec{D} =  \varepsilon \vec{E}
+\end{equation}
+
+\begin{equation}
+  \label{eq:mediumB}
+  \vec{B} =  \mu \vec{H}
+\end{equation}
+
+Dengan menggabungkan teori medan EM dengan hubungan konstitutif, dimungkinkan untuk menggambarkan sinyal GPR secara komprehensif.
+
+
 \subsection{GprMax}
 \label{subsec:gprMax}
 
@@ -94,45 +143,94 @@ Sinyal GPR sangat terkontaminasi oleh \emph{clutter}.
 Pengolahan sinyal pada GPR utamanya merupakan sarana untuk mengurangi \emph{clutter} tersebut. 
 Pada dasarnya, rasio dari sinyal terhadap clutter adalah kunci dari deteksi objek. 
 Tujuan dari pengolahan sinyal pada GPR adalah untuk menyajikan gambar yang dapat dimengerti, atau mengklasifikasikan hasil target berdasarkan prosedur tertentu. 
-Untuk menghasilkan data berupa gambar, data GPR akan diproses dan ditampilkan dalam bentuk \emph{A-Scan}, \emph{B-Scan}, atau \emph{C-Scan}. \parencite{3DgprMax}
+Untuk menghasilkan data visual, data GPR akan diproses dan ditampilkan dalam mode A-Scan, B-Scan, atau \emph{C-Scan}. \parencite{3DgprMax}
+Ketiga bentuk Mode visualisasi sinyal GPR dapat dilihat pada gambar \ref{fig:scanmodes}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5]{gambar/scanModes.png}
+  \caption{Mode visualisasi sinyal GPR: (a) A-scan, (b) B-scan, and (c) C-scan \parencite{scanModes}.}
+  \label{fig:scanmodes}
+\end{figure}
 
 \subsection{A-Scan}
 \label{subsec:aScan}
 
-\emph{A-Scan} merupakan grafik satu dimensi di mana amplitudo gelombang diplot dalam fungsi waktu. 
-Gambar 2.2 merupakan contoh dari grafik \emph{A-Scan} pada simulasi gprMax. 
-Gelombang waktu yang diterima dapat dideskripsikan sebagai konvolusi fungsi waktu yang mewakili masing-masing respon impuls dari komponen radar terhadap noise dari berbagai sumber. 
+A-Scan merupakan mode GPR yang ditampilkan dalam satu dimensi, di mana amplitudo gelombang diplot dalam fungsi waktu. 
+Pada mode ini, sinyal GPR direkam dan ditampilkan sebagai amplitudo sinyal terhadap waktu. 
+Sinyal ini mencerminkan pantulan gelombang elektromagnetik yang terdeteksi oleh GPR saat menjelajahi lapisan tanah atau struktur di bawah permukaan.
+
+Dalam mode A-scan, sumbu waktu merepresentasikan jarak atau posisi relatif dari antena GPR saat menjelajahi lapisan tanah atau struktur di bawah permukaan. 
+Titik awal grafik A-scan mengindikasikan saat gelombang elektromagnetik dipancarkan oleh antena GPR, dan titik akhirnya mencerminkan waktu yang dibutuhkan untuk gelombang elektromagnetik mencapai target atau objek bawah permukaan dan kembali ke antena GPR.
+Sedangkan Amplitudo sinyal pada sumbu vertikal menunjukkan kekuatan atau intensitas sinyal GPR yang terdeteksi oleh antena saat berinteraksi dengan benda atau lapisan bawah permukaan. 
+Puncak amplitudo yang tinggi menunjukkan adanya pantulan kuat, sedangkan amplitudo yang lebih rendah menunjukkan adanya pantulan yang lebih lemah.
+
+Gambar \ref{fig:AscanGPR} merupakan contoh dari grafik A-Scan pada simulasi gprMax yang ditampilkan dalam 6 jenis grafik. 
+Untuk setiap barisnya merupakan grafik A-scan berdasarkan sumbu acuan (sumbu-x, sumbu-y, dan sumbu-z), sedangkan setiap kolomnya merupakan grafik A-scan berdasarkan kuat bidang elektromagnetik (kuat medan listrik (E) dan kuat medan magnet (H))
+Pada grafik, terlihat grafik sinyal A-scan untuk kuat medan listrik pada sumbu-x dan sumbu-y, serta kuat medan magnet pada sumbu-z selalu bernilai 0.
+Hal ini menunjukkan pada simulasi gprMax, sinyal GPR dipancarkan secara vertikal (sumbu-z) ke arah bawah suatu permukaan.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.35]{gambar/GPRAscan.jpeg}
+  \includegraphics[scale=0.45]{gambar/GPRAscan.jpeg}
   \caption{Contoh A-Scan Sinyal GPR.}
   \label{fig:AscanGPR}
 \end{figure}
 
-Bentuk gelombang tunggal atau \emph{A-Scan} didefinisikan sebagai
+Bentuk gelombang tunggal atau A-Scan didefinisikan sebagai
 
 \begin{equation}
   \label{eq:Ascan}
   F(z)=A( x_{i} , y_{j} , z_{k} )
 \end{equation}
 
-di mana rentang k = 1 sampai N, i dan j bilangan konstan \parencite{danielDvd}.
-Perlu diperhatikan bahwa waktu dan kedalaman sumbu Z dapat dianggap saling berkaitan dengan kecepatan perambatan.\\
+di mana rentang k = 1 sampai N, i dan j bilangan konstan \parencite{danielDvd}.\\
 
 \subsection{B-Scan}
 \label{subsec:bScan}
 
-\emph{B-Scan} merupakan sebuah set dari gelombang radar yang berurutan sepanjang arah tertentu. 
-Gambar 2.3 merupakan contoh dari grafik \emph{B-Scan} pada simulasi gprMax. 
-Jika \emph{A-Scan} memberikan informasi terkait waktu rambatan antara pengirim dan penerima dalam dimensi spasial, maka sekumpulan gelombang \emph{A-Scan} dapat bekerja baik dalam dimensi temporal maupun spasial.
+B-scan merupakan sebuah set dari gelombang A-scan GPR yang berurutan sepanjang arah tertentu. 
+Mode B-scan menghasilkan gambar 2 dimensi dari data GPR, yang berguna untuk memberikan gambaran keseluruhan dari struktur yang dilintasi oleh GPR.
+Dengan melihat gambar B-scan, pengguna GPR dapat mengidentifikasi batas lapisan, perubahan komposisi material, atau adanya objek tertanam seperti pipa, kabel, atau struktur bawah permukaan lainnya.
+
+Dalam mode B-scan, sumbu horizontal pada gambar menunjukkan posisi lintasan perangkat GPR saat pemindaian, sedangkan sumbu vertikal merepresentasikan kedalaman atau jarak relatif. 
+Setiap titik pada gambar B-scan mewakili amplitudo atau kekuatan sinyal GPR yang terdeteksi pada posisi tersebut. 
+Gambar B-scan biasanya ditampilkan dalam skala abu-abu atau dalam warna dengan gradasi intensitas yang menggambarkan kekuatan sinyal.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.35]{gambar/GPRBscan.jpg}
+  \includegraphics[scale=0.45]{gambar/GPRBscan.jpg}
   \caption{Contoh B-Scan Sinyal GPR.}
   \label{fig:BscanGPR}
 \end{figure}
+
+Gambar \ref{fig:BscanGPR} merupakan contoh dari bentuk B-Scan pada simulasi gprMax. 
+Gambar B-scan ditampilkan berwarna dengan gradasi warna merah-biru. 
+Pada keterangan gradasi warna gambar, warna merah menunjukkan sinyal kuat (nilai positif) dan warna biru menunjukkan sinyal lemah (nilai negatif) dengan interval nilai medan listrik (Ez) dari -1000 $V.m^{-1}$ hingga 1000 $V.m^{-1}$.
+
+Dalam gambar B-scan, bentuk parabola sinyal muncul karena adanya perbedaan konduktivitas atau dielektrik antara lapisan atau objek yang terdeteksi. 
+Ketika gelombang elektromagnetik melewati batas antara dua bahan yang berbeda, terjadi pembiasan dan perubahan arah lintasan gelombang.
+Hal ini mengakibatkan adanya variasi amplitudo sinyal yang terdeteksi.
+
+Pada gambar \ref{fig:BscanGPR}, perubahan warna merah-biru dan kebalikannya pada sinyal B-scan biasanya mewakili perubahan amplitudo atau kekuatan sinyal yang terdeteksi oleh GPR. 
+Perubahan warna ini dapat disebabkan oleh beberapa faktor, yaitu : 
+
+\begin{enumerate}[nolistsep]
+
+  \item Perbedaan konduktivitas material.
+  
+  Material dengan konduktivitas yang lebih tinggi atau kemampuan untuk memantulkan gelombang elektromagnetik secara lebih baik akan menghasilkan sinyal yang lebih kuat dan warna yang lebih terang (merah) dalam gambar B-scan. 
+  Sebaliknya, material dengan konduktivitas rendah atau kemampuan refleksi yang lebih rendah akan menghasilkan sinyal yang lebih lemah dan warna yang lebih gelap (biru).   
+
+  \item Perbedaan bentuk geometri objek.
+  
+  Objek dengan bentuk yang mengarahkan atau memfokuskan gelombang elektromagnetik ke antena GPR dapat menghasilkan sinyal yang lebih kuat dan warna yang lebih terang (merah). 
+  Sebaliknya, objek dengan geometri yang mengakibatkan penyebaran atau dispersi gelombang elektromagnetik akan menghasilkan sinyal yang lebih lemah dan warna yang lebih gelap (biru).
+
+  \item Jarak tempuh gelombang.
+  
+  Semakin jauh jarak tempuh gelombang elektromagnetik, semakin lemah intensitas sinyal yang terdeteksi. 
+\end{enumerate}
 
 Bentuk gelombang dua dimensi atau B-Scan didefinisikan sebagai
 
