@@ -248,6 +248,21 @@ di mana rentang k = 1 sampai N, i = 1 sampai L, dan j bilangan konstan, atau
 
 di mana rentang k = 1 sampai N, j = 1 sampai M, dan i bilangan konstan \parencite{danielDvd}.
 
+\subsection{Migrasi}
+\label{subsec:migrasi}
+
+Migrasi merupakan teknik pemrosesan data GPR untuk meningkatkan resolusi spasial dan mengembangkan gambar bawah permukaan yang lebih realistis \parencite{jol2008ground}.
+Migrasi akan mengubah data mentah GPR yang tidak terfokus menjadi gambar terfokus yang menunjukkan lokasi dan ukuran objek yang sebenarnya dengan reflektifitas elektromagnetik yang sesuai.
+Metode migrasi paling populer dan fungsional untuk aplikasi pencitraan GPR antara lain \emph{hyperbolic summation}, \emph{Kirchhoff's migration}, \emph{phase-shift migration}, \emph{$\omega-k$ (Stolt) migration}, dan \emph{back-projection focusing} \parencite{Ozdemir2014ARO}.
+Contoh hasil migrasi sinyal B-scan GPR sederhana dapat dilihat pada gambar \ref{fig:migrasiGPR}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.27]{gambar/migrasi.png}
+  \caption{Contoh Migrasi Sinyal B-Scan GPR \parencite{Ozdemir2014ARO}.}
+  \label{fig:migrasiGPR}
+\end{figure}
+
 \subsection{Bandwidth}
 \label{subsec:bandwidth}
 
@@ -267,7 +282,7 @@ di mana r merupakan panjang resolusi dan v merupakan kecepatan perambatan \paren
 \label{subsec:centerFrequency}
 
 \emph{Center frequency} merupakan titik tengah dari batas frekuensi atas dan frekuensi bawah. 
-\emph{Bandwidth} tidak menentukan frekuensi dari sinyal GPR, namun dapat menentukan batas frekuensi dari \emph{center frequency}.
+\emph{Bandwidth} tidak menentukan frekuensi dari sinyal GPR, namun \emph{bandwidth} dapat menentukan batas frekuensi dari \emph{center frequency}.
 Semakin rendah frekuensi, semakin besar kemungkinan mendapat sinyal GPR dari media perambatnya.
 
 Sinyal GPR dicirikan oleh rasio bandwidth terhadap \emph{center frequency}
@@ -449,7 +464,7 @@ Jika tujuan pemodelan adalah untuk mengidentifikasi model yang paling dekat mere
 \emph{Structural Similarity Index Measurement} (SSIM) adalah metode yang digunakan untuk mengukur kesamaan struktural antara dua gambar atau sinyal. 
 Metrik ini dikembangkan untuk mencerminkan persepsi visual manusia dalam mengevaluasi kesamaan antara dua gambar. 
 SSIM memperhitungkan 3 parameter yang ada pada citra, yaitu kecerahan (\emph{luminance}), kontras (\emph{contrast}), dan struktur (\emph{structure}). 
-Diagram sistem SSIM dapat dilihat pada gambar berikut.
+Diagram sistem SSIM dapat dilihat pada gambar \ref{fig:SSIM}.
 
 \begin{figure}[ht]
   \centering

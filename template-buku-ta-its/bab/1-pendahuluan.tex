@@ -44,7 +44,12 @@ Oleh karena itu, judul ini diajukan dengan harapan model GAN ini dapat merekonst
 
 Berdasarkan latar belakang tersebut, maka masalah yang dapat diambil adalah proses pemodelan \emph{cavities} pada beton berbasis sinyal GPR relatif rumit dan lama. 
 Terdapat banyak solusi yang telah dilakukan untuk memodelkan objek bawah permukaan, namun metode tersebut membutuhkan proses perhitungan yang rumit dan waktu komputasi yang lama. 
-Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR.
+Oleh karena itu, diperlukan suatu metode untuk dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR dengan cepat.
+
+\section{Tujuan}
+\label{sec:Tujuan}
+
+Tujuan dari penelitian ini adalah menerapkan model generatif untuk merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR dengan lebih cepat.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
@@ -55,7 +60,7 @@ Batasan-batasan masalah pada permasalahan yang dibahas sebelumnya di antaranya a
 
   \item Simulasi model yang dibentuk dengan gprMax akan berfokus pada sintesis sinyal \emph{B-Scan} berbentuk parabolik dengan \emph{center frequency} 4.5 GHz dan bentuk gelombang ricker.
 
-  \item \emph{Cavities} yang dideteksi akan direpresentasikan dalam objek berbentuk irregular dengan ukuran 3 cm hingga 7 cm dan berada di kedalam 2.5 cm hingga 7.5 cm.
+  \item Objek irregular berupa \emph{Cavities} dengan ukuran 3 cm hingga 10 cm dan berada di kedalaman 2.5 cm hingga 10 cm.
   
   \item Jumlah \emph{cavities} yang dideteksi berjumlah 1 buah objek irregular yang terdiri dari beberapa objek \emph{cavities} yang saling menempel.
 
@@ -63,13 +68,8 @@ Batasan-batasan masalah pada permasalahan yang dibahas sebelumnya di antaranya a
 
 \end{enumerate}
 
-\section{Tujuan}
-\label{sec:Tujuan}
-
-Tujuan dari penelitian ini adalah membuat suatu metode yang tidak memerlukan proses perhitungan rumit, sehingga dapat merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR dengan lebih cepat.
-
 \section{Manfaat}
 \label{sec:manfaat}
 
-Manfaat dari penelitian ini adalah mampu membentuk suatu metode untuk merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR yang beresolusi tinggi pada beton dengan menggunakan GAN. 
+Manfaat dari penelitian ini adalah mampu menerapkan model generatif untuk merekonstruksi objek irregular terpendam pada beton berbasis sinyal GPR yang beresolusi tinggi pada beton dengan menggunakan GAN. 
 Selain itu, penelitian ini juga dapat menjadi referensi untuk penelitian selanjutnya terkait rekonstruksi sinyal GPR.
